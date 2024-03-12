@@ -1,0 +1,3071 @@
+Program.Sub.ScreenSU.Start
+Gui.fWOPick..Create
+Gui.fWOPick..Caption("Work Order range picker")
+Gui.fWOPick..Size(5760,6765)
+Gui.fWOPick..MinX(0)
+Gui.fWOPick..MinY(0)
+Gui.fWOPick..Position(0,0)
+Gui.fWOPick..BackColor(-2147483633)
+Gui.fWOPick..MousePointer(0)
+Gui.fWOPick..Event(UnLoad,unload_all)
+Gui.fWOPick.lvwWoRng.Create(ListView)
+Gui.fWOPick.lvwWoRng.Size(5475,4080)
+Gui.fWOPick.lvwWoRng.Position(75,1635)
+Gui.fWOPick.lvwWoRng.View(3)
+Gui.fWOPick.lvwWoRng.AddListViewColumn("From Job",2737,2)
+Gui.fWOPick.lvwWoRng.AddListViewColumn("To Job",2737,0)
+Gui.fWOPick.lvwWoRng.BorderStyle(1)
+Gui.fWOPick.lvwWoRng.FontSize(10)
+Gui.fWOPick.lvwWoRng.FontStyle(True,False,False,False,False)
+Gui.fWOPick.lvwWoRng.Multiselect(True)
+Gui.fWOPick.cmdLoadDash.Create(Button)
+Gui.fWOPick.cmdLoadDash.Size(1575,375)
+Gui.fWOPick.cmdLoadDash.Position(90,5850)
+Gui.fWOPick.cmdLoadDash.Caption("Load Dashboard")
+Gui.fWOPick.cmdLoadDash.Event(Click,cmdLoadDash_Click)
+Gui.fWOPick.cmdLoadDash.TabStop(True)
+Gui.fWOPick.cmdLoadDash.TabIndex(10)
+Gui.fWOPick.cmdAdd2Lst.Create(Button)
+Gui.fWOPick.cmdAdd2Lst.Size(1530,375)
+Gui.fWOPick.cmdAdd2Lst.Position(90,1080)
+Gui.fWOPick.cmdAdd2Lst.Caption("Add")
+Gui.fWOPick.cmdAdd2Lst.Event(Click,cmdAdd2Lst_Click)
+Gui.fWOPick.cmdAdd2Lst.TabStop(True)
+Gui.fWOPick.cmdAdd2Lst.TabIndex(7)
+Gui.fWOPick.cmdRmvFrmLst.Create(Button)
+Gui.fWOPick.cmdRmvFrmLst.Size(1530,375)
+Gui.fWOPick.cmdRmvFrmLst.Position(2070,1080)
+Gui.fWOPick.cmdRmvFrmLst.Caption("Remove ")
+Gui.fWOPick.cmdRmvFrmLst.Event(Click,cmdRmvFrmLst_Click)
+Gui.fWOPick.cmdRmvFrmLst.TabStop(True)
+Gui.fWOPick.cmdRmvFrmLst.TabIndex(8)
+Gui.fWOPick.txtFrmJob.Create(TextBox,"",True,990,300,0,90,660,True,0,"Arial",8,-2147483643,1)
+Gui.fWOPick.txtFrmJob.MaxLength(6)
+Gui.fWOPick.txtFrmJob.TabStop(True)
+Gui.fWOPick.txtFrmJob.TabIndex(1)
+Gui.fWOPick.lbl1.Create(Label,"-",True,195,255,0,1110,750,True,0,"Arial",8,-2147483633,0)
+Gui.fWOPick.txtFrmSuf.Create(TextBox,"",True,510,300,0,1305,660,True,0,"Arial",8,-2147483643,1)
+Gui.fWOPick.txtFrmSuf.Event(LostFocus,txtFrmSuf_LostFocus)
+Gui.fWOPick.txtFrmSuf.Event(Change,txtFrmSuf_LostFocus)
+Gui.fWOPick.txtFrmSuf.MaxLength(3)
+Gui.fWOPick.txtFrmSuf.TabStop(True)
+Gui.fWOPick.txtFrmSuf.TabIndex(2)
+Gui.fWOPick.lbl3.Create(Label,"Work Order range selection",True,2265,255,0,90,90,True,0,"Arial",8,-2147483633,0)
+Gui.fWOPick.cmdBrFrm.Create(Button)
+Gui.fWOPick.cmdBrFrm.Size(360,345)
+Gui.fWOPick.cmdBrFrm.Position(1980,630)
+Gui.fWOPick.cmdBrFrm.Caption("^")
+Gui.fWOPick.cmdBrFrm.Event(Click,cmdBrFrm_Click)
+Gui.fWOPick.cmdBrFrm.TabStop(True)
+Gui.fWOPick.cmdBrFrm.TabIndex(3)
+Gui.fWOPick.txtToJob.Create(TextBox,"",True,990,300,0,3300,660,True,0,"Arial",8,-2147483643,1)
+Gui.fWOPick.txtToJob.MaxLength(6)
+Gui.fWOPick.txtToJob.TabStop(True)
+Gui.fWOPick.txtToJob.TabIndex(4)
+Gui.fWOPick.cmdBrTo.Create(Button)
+Gui.fWOPick.cmdBrTo.Size(360,330)
+Gui.fWOPick.cmdBrTo.Position(5205,645)
+Gui.fWOPick.cmdBrTo.Caption("^")
+Gui.fWOPick.cmdBrTo.DefaultValue("")
+Gui.fWOPick.cmdBrTo.Event(Click,cmdBrTo_Click)
+Gui.fWOPick.cmdBrTo.TabStop(True)
+Gui.fWOPick.cmdBrTo.TabIndex(6)
+Gui.fWOPick.txtToSuf.Create(TextBox,"",True,510,300,0,4530,660,True,0,"Arial",8,-2147483643,1)
+Gui.fWOPick.txtToSuf.MaxLength(3)
+Gui.fWOPick.txtToSuf.TabStop(True)
+Gui.fWOPick.txtToSuf.TabIndex(5)
+Gui.fWOPick.lbl2.Create(Label,"-",True,195,255,0,4335,750,True,0,"Arial",8,-2147483633,0)
+Gui.fWOPick.cmdClrLst.Create(Button)
+Gui.fWOPick.cmdClrLst.Size(1530,375)
+Gui.fWOPick.cmdClrLst.Position(4035,1080)
+Gui.fWOPick.cmdClrLst.Caption("Clear ")
+Gui.fWOPick.cmdClrLst.Event(Click,cmdClrLst_Click)
+Gui.fWOPick.cmdClrLst.TabStop(True)
+Gui.fWOPick.cmdClrLst.TabIndex(9)
+Gui.fWOPick.lbl4.Create(Label,"From",True,1095,255,0,90,390,True,0,"Arial",8,-2147483633,0)
+Gui.fWOPick.lbl5.Create(Label,"To",True,1095,255,0,3300,390,True,0,"Arial",8,-2147483633,0)
+Gui.fWOSelForFlex..Create
+Gui.fWOSelForFlex..Caption("Select WO's that need to be added to flex schedules")
+Gui.fWOSelForFlex..Size(19485,11820)
+Gui.fWOSelForFlex..MinX(0)
+Gui.fWOSelForFlex..MinY(0)
+Gui.fWOSelForFlex..Position(0,0)
+Gui.fWOSelForFlex..BackColor(-2147483633)
+Gui.fWOSelForFlex..MousePointer(0)
+Gui.fWOSelForFlex..Event(UnLoad,fWOSelForFlex_UnLoad)
+Gui.fWOSelForFlex.GsGcWO.Create(GsGridControl)
+Gui.fWOSelForFlex.GsGcWO.Size(19125,4365)
+Gui.fWOSelForFlex.GsGcWO.Position(105,105)
+Gui.fWOSelForFlex.cmdGenFlexSched.Create(Button)
+Gui.fWOSelForFlex.cmdGenFlexSched.Size(2880,540)
+Gui.fWOSelForFlex.cmdGenFlexSched.Position(60,10650)
+Gui.fWOSelForFlex.cmdGenFlexSched.Caption("Generate Flex Schedule")
+Gui.fWOSelForFlex.cmdGenFlexSched.Event(Click,cmdGenFlexSched_Click)
+Gui.fWOSelForFlex.cmdPopWCSel.Create(Button)
+Gui.fWOSelForFlex.cmdPopWCSel.Size(2880,540)
+Gui.fWOSelForFlex.cmdPopWCSel.Position(105,4560)
+Gui.fWOSelForFlex.cmdPopWCSel.Caption("Populate WC Selection Grid")
+Gui.fWOSelForFlex.cmdPopWCSel.Event(Click,cmdPopWCSel_Click)
+Gui.fWOSelForFlex.GsGCWCSel.Create(GsGridControl)
+Gui.fWOSelForFlex.GsGCWCSel.Size(19125,5295)
+Gui.fWOSelForFlex.GsGCWCSel.Position(105,5205)
+Gui.FMatOpt..Create
+Gui.FMatOpt..Size(19695,11490)
+Gui.FMatOpt..MinX(0)
+Gui.FMatOpt..MinY(0)
+Gui.FMatOpt..Position(0,0)
+Gui.FMatOpt..BackColor(-2147483633)
+Gui.FMatOpt..MousePointer(0)
+Gui.FMatOpt..Caption("Issue Material to Schedule")
+Gui.FMatOpt..Event(UnLoad,unload_all)
+Gui.FMatOpt..Event(Drop,FMatOpt_Drop)
+Gui.FMatOpt.GsGcMatOpt.Create(GsGridControl)
+Gui.FMatOpt.GsGcMatOpt.Size(14565,10290)
+Gui.FMatOpt.GsGcMatOpt.Position(4875,615)
+Gui.FMatOpt.GsGcMatOpt.Event(CellValueChanged,GsGcMatOpt_CellValueChanged)
+Gui.FMatOpt.GsGcMatOpt.Event(RowCellClick,GsGcMatOpt_RowCellClick)
+Gui.FMatOpt.lblFlexSchd.Create(Label,"Raw Material Requirements for Flex Schdeule: ",True,3480,255,0,4875,300,True,0,"Arial",8,-2147483633,0)
+Gui.FMatOpt.txtFlxSchd.Create(TextBox,"",True,1035,300,0,8475,210,True,0,"Arial",8,-2147483632,1)
+Gui.FMatOpt.txtFlxSchd.FontStyle(True,False,False,False,False)
+Gui.FMatOpt.txtFlxSchd.Locked(True)
+Gui.FMatOpt.GsGCFlxSchd.Create(GsGridControl)
+Gui.FMatOpt.GsGCFlxSchd.Size(4455,10290)
+Gui.FMatOpt.GsGCFlxSchd.Position(195,615)
+Gui.FMatOpt.GsGCFlxSchd.Event(RowCellClick,GsGCFlxSchd_RowCellClick)
+Gui.FMatOpt.lblFlexSchd2.Create(Label,"Flex Schedule Selection Grid",True,3480,255,0,195,300,True,0,"Arial",8,-2147483633,0)
+Gui.FMatOpt.lblFlexSchd2.FontStyle(True,False,False,False,False)
+Gui.FMatOpt.lblFlexSchd2.Event(DblClick,lblFlexSchd2_DblClick)
+Gui.FMatOpt.cmdPrintBCWO.Create(Button)
+Gui.FMatOpt.cmdPrintBCWO.Size(5565,375)
+Gui.FMatOpt.cmdPrintBCWO.Position(13860,180)
+Gui.FMatOpt.cmdPrintBCWO.Caption("Print Bar Code WO report")
+Gui.FMatOpt.cmdPrintBCWO.Event(Click,cmdPrintBCWO_Click)
+Gui.FMatOpt.chhSave2JobOps.Create(CheckBox)
+Gui.FMatOpt.chhSave2JobOps.Size(2190,360)
+Gui.FMatOpt.chhSave2JobOps.Position(9750,180)
+Gui.FMatOpt.chhSave2JobOps.Caption("Save to Job Operations")
+Gui.FMatOpt.chhSave2JobOps.Event(Click,chhSave2JobOps_Click)
+Gui.FMatOpt.cmdSched.Create(Button)
+Gui.FMatOpt.cmdSched.Size(1515,375)
+Gui.FMatOpt.cmdSched.Position(12105,180)
+Gui.FMatOpt.cmdSched.Caption("Schedule Jobs")
+Gui.FMatOpt.cmdSched.Event(Click,cmdSched_Click)
+Gui.FLotBin..Create
+Gui.FLotBin..Caption("Select Lot/bin")
+Gui.FLotBin..Size(9555,7305)
+Gui.FLotBin..MinX(0)
+Gui.FLotBin..MinY(0)
+Gui.FLotBin..Position(0,0)
+Gui.FLotBin..BackColor(-2147483633)
+Gui.FLotBin..MousePointer(0)
+Gui.FLotBin..Event(UnLoad,FLotBin_UnLoad)
+Gui.FLotBin.GsGCLotbin.Create(GsGridControl)
+Gui.FLotBin.GsGCLotbin.Size(9375,5925)
+Gui.FLotBin.GsGCLotbin.Position(-45,435)
+Gui.FLotBin.GsGCLotbin.Event(CellValueChanged,GsGCLotbin_CellValueChanged)
+Gui.FLotBin.cmdIssueMat.Create(Button)
+Gui.FLotBin.cmdIssueMat.Size(1365,375)
+Gui.FLotBin.cmdIssueMat.Position(-15,6420)
+Gui.FLotBin.cmdIssueMat.Caption("Issue Material")
+Gui.FLotBin.cmdIssueMat.Event(Click,cmdIssueMat_Click)
+Gui.FLotBin.lbl1.Create(Label,"Total Qty to Issue",True,1650,255,0,6420,6540,True,0,"Arial",8,-2147483633,0)
+Gui.FLotBin.lbl1.FontStyle(True,False,False,False,False)
+Gui.FLotBin.txtIssueQty.Create(TextBox,"",True,1215,300,0,8085,6450,True,0,"Arial",8,-2147483643,1)
+Gui.FLotBin.txtIssueQty.Locked(True)
+Gui.FLotBin.txtIssueQty.ForeColor(255)
+Gui.FLotBin.lbl2.Create(Label,"Qty to Match",True,1230,255,0,3885,6540,True,0,"Arial",8,-2147483633,0)
+Gui.FLotBin.lbl2.FontStyle(True,False,False,False,False)
+Gui.FLotBin.txtMatchqty.Create(TextBox,"",True,1215,300,0,5145,6450,True,0,"Arial",8,-2147483643,1)
+Gui.FLotBin.txtMatchqty.Locked(True)
+Gui.FLotBin.lbl3.Create(Label,"Item Master for Part ",True,1935,255,0,-45,150,True,0,"Arial",8,-2147483633,0)
+Gui.FLotBin.lbl3.FontStyle(True,False,False,False,False)
+Gui.FLotBin.lbl3.DefaultValue("")
+Gui.FLotBin.txtRM.Create(TextBox,"",True,1560,300,0,1875,60,True,0,"Arial",8,-2147483643,1)
+Gui.FLotBin.txtRM.Locked(True)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.iListCnt.Declare
+v.Global.iIndex.Declare
+v.Global.sWC.Declare
+v.Global.sFlexGen.Declare
+v.Global.sSelJobs.Declare
+v.Global.sRM.Declare
+v.Global.bIssue.Declare
+v.Global.bEdit.Declare
+v.Global.sChkPath.Declare
+v.Global.sFileName.Declare
+Program.External.Include.Library("450100.lib")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.sIcon.Declare
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,9999999)
+'check to see if the user is an optimizer or a person who can issue material(Material handler)
+F.Global.Security.IsInGroup(V.Caller.User,"4720ISSU",V.Caller.CompanyCode,V.Global.bIssue)
+
+f.Intrinsic.String.Build("{0}\GCG_4720_CHECK.dat",v.Caller.GasDir,v.Global.sChkPath)
+'create a dictionary for use in multiple subs
+f.Data.Dictionary.CreateFromSQL("JobHeaderDict","conx","Select job + suffix, Date_due from V_JOB_HEADER where date_closed = '1900-01-01'")
+f.Data.Dictionary.SetDefaultReturn("JobHeaderDict","01/01/1990")
+f.Intrinsic.Control.Try
+	F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,v.Local.sIcon)
+	gui.FLotBin..Icon(v.Local.sIcon)
+	gui.FMatOpt..Icon(v.Local.sIcon)
+	gui.fWOPick..Icon(v.Local.sIcon)
+	gui.fWOSelForFlex..Icon(v.Local.sIcon)
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.EndTry
+'if switch is O this launches just the material issue/optimizer aspect of the project else it launhces the gen flex schedule aspect of it.
+f.Intrinsic.Control.If(v.Caller.Switches,=,"O")
+ 
+	
+	f.Intrinsic.Control.CallSub(MatOptLoad)
+
+
+f.Intrinsic.control.ElseIf(v.Caller.Switches,=,"I")
+	f.Intrinsic.Control.CallSub(cmdLoadDash_Click)
+	
+f.Intrinsic.control.Else
+	
+	gui.fWOPick..Visible(true)
+	gui.fWOPick..Show
+f.Intrinsic.Control.EndIf
+
+
+
+Program.Sub.Main.End
+
+Program.Sub.cmdBrFrm_Click.Start
+v.Local.sRet.Declare(String)
+v.Local.sTemp.Declare(String)
+v.Local.sTitles.Declare(String)
+v.Local.iWidths.Declare(Long)
+'job browser in the selection screen.
+Function.Intrinsic.String.Split("Job*!*Suffix*!*Part*!*Description*!*Customer*!*Due Date","*!*",variable.local.sTitles)
+
+Function.Intrinsic.String.Split("1000*!*800*!*2000*!*3000*!*800*!*1000","*!*",variable.local.iWidths)
+f.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+Function.Intrinsic.UI.Browser("Select a Job","conx","Select Job, Suffix, Part, Description, Customer, Date_Due From V_JOB_HEADER where date_closed = '1900-01-01' and job not like 'ZIND%' and left(JOB,1) <> 'X' order by job, suffix",Variable.Local.sTitles,Variable.Local.iWidths,Variable.Local.sRet)
+
+Function.Intrinsic.Control.If(Variable.Local.sRet,"<>","***CANCEL***")
+	Function.Intrinsic.String.Split(Variable.Local.sRet,"*!*",Variable.Local.sRet)
+
+' Function.Intrinsic.String.Concat("You selected ",Variable.Local.sRet(0),"-",Variable.Local.sRet(1),"  ",Variable.Local.sRet(3),Variable.Local.sTemp)
+	gui.fWOPick.txtFrmJob.Text(Variable.Local.sRet(0))
+	gui.fWOPick.txtFrmSuf.Text(Variable.Local.sRet(1))
+	gui.fWOPick.txtToJob.Text(Variable.Local.sRet(0))
+	gui.fWOPick.txtToSuf.Text(Variable.Local.sRet(1))
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdBrFrm_Click.End
+
+Program.Sub.cmdAdd2Lst_Click.Start
+v.Local.sSql.Declare(String)
+v.Local.iCheck.Declare(Long)
+v.Local.sJob.Declare(String)
+v.Local.sSuffix.Declare(String)
+v.Local.sJob1.Declare(String)
+v.Local.sSuffix1.Declare(String)
+v.Local.sWO.Declare(String)
+v.Local.sWO1.Declare(String)
+v.Local.sMsg.Declare(String)
+v.Local.sRow.Declare(String)
+'adds the job ranges to the list.
+'check if all the required text boxes are filled and they have made  a valid selection
+f.Intrinsic.Control.If(v.Screen.fWOPick!txtFrmJob.Text,=,"")
+	f.Intrinsic.UI.Msgbox("You need to fill in the complete Job From fields.")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.If(v.Screen.fWOPick!txtToJob.Text,=,"")
+	f.Intrinsic.UI.Msgbox("You need to fill in the complete Job  To fields.")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.fWOPick!txtFrmJob.Text,=,v.Screen.fWOPick!txtToJob.Text)
+	f.Intrinsic.Control.If(v.Screen.fWOPick!txtFrmSuf.Text.long,>,0)
+		f.Intrinsic.Control.If(v.Screen.fWOPick!txtFrmSuf.Text.long,>,v.Screen.fWOPick!txtToSuf.Text.long)
+			f.Intrinsic.UI.Msgbox("The From suffix cannot be greater than the To suffix")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Else
+	f.Intrinsic.Control.If(v.Screen.fWOPick!txtFrmJob.Text.long,>,v.Screen.fWOPick!txtToJob.Text.long)
+		f.Intrinsic.UI.Msgbox("The From Job cannot be greater than the To Job")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+
+
+
+v.Local.sJob.Set(v.Screen.fWOPick!txtFrmJob.Text)
+v.Local.sSuffix.Set(v.Screen.fWOPick!txtFrmSuf.Text)
+
+f.Intrinsic.String.LPad(v.Local.sJob," ",6,v.Local.sJob)
+f.Intrinsic.String.LPad(v.Local.sSuffix," ",3,v.Local.sSuffix)
+'check if it is a valid work order in the from field
+f.Intrinsic.String.Build("Select Count(Job) From V_JOB_HEADER where job = '{0}' and Suffix = '{1}' and date_closed = '1900-01-01' and job not like 'ZIND%'", v.Local.sJob,v.Local.sSuffix,v.Local.sSql)
+f.odbc.Connection!conx.executeandreturn(v.Local.sSql,v.Local.iCheck)
+f.Intrinsic.Control.If(v.Local.iCheck,=,0)
+	f.Intrinsic.string.Build("{0}-{1} in the From field is not a valid open work order.",v.Local.sJob,v.Local.sSuffix,v.Local.sMsg)
+	f.Intrinsic.UI.Msgbox(v.Local.sMsg)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+v.Local.sJob1.Set(v.Screen.fWOPick!txtToJob.Text)
+v.Local.sSuffix1.Set(v.Screen.fWOPick!txtToSuf.Text)
+f.Intrinsic.String.LPad(v.Local.sJob1," ",6,v.Local.sJob1)
+f.Intrinsic.String.LPad(v.Local.sSuffix1," ",3,v.Local.sSuffix1)
+'check if it is a valid work order in the to field
+f.Intrinsic.String.Build("Select Count(Job) From V_JOB_HEADER where job = '{0}' and Suffix = '{1}' and date_closed = '1900-01-01' and job not like 'ZIND%'", v.Local.sJob1,v.Local.sSuffix1,v.Local.sSql)
+f.odbc.Connection!conx.executeandreturn(v.Local.sSql,v.Local.iCheck)
+f.Intrinsic.Control.If(v.Local.iCheck,=,0)
+	f.Intrinsic.string.Build("{0}-{1} in the To field is not a valid open work order.",v.Local.sJob1,v.Local.sSuffix1,v.Local.sMsg)
+	f.Intrinsic.UI.Msgbox(v.Local.sMsg)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+'if valid work order format them in job - suffix format and make them available to the user.
+f.Intrinsic.string.Build("{0}-{1}",v.Local.sJob,v.Local.sSuffix,v.Local.sWO)
+f.Intrinsic.string.Build("{0}-{1}",v.Local.sJob1,v.Local.sSuffix1,v.Local.sWO1)
+v.Global.iListCnt.set(v.Screen.fWOPick!lvwWoRng.ListItemCount)
+gui.fWOPick.lvwWoRng.AddListItem(v.Global.iListCnt,v.Local.sWO)
+gui.fWOPick.lvwWoRng.SetListItemSubItemText(v.Global.iListCnt,1,v.Local.sWO1)
+
+gui.fWOPick.txtFrmJob.Text("")
+gui.fWOPick.txtToJob.Text("")
+
+gui.fWOPick.txtFrmSuf.Text("")
+gui.fWOPick.txtToSuf.Text("")
+
+
+
+Program.Sub.cmdAdd2Lst_Click.End
+
+Program.Sub.cmdBrTo_Click.Start
+v.Local.sRet.Declare(String)
+v.Local.sTemp.Declare(String)
+v.Local.sSql.Declare(String)
+v.Local.sTitles.Declare(String)
+v.Local.iWidths.Declare(Long)
+v.Local.sFromJob.Declare(String)
+v.Local.sFromJob.Set(v.Screen.fWOPick!txtFrmJob.Text)
+
+'the to browser
+
+'check to make sure a from job is selected
+f.Intrinsic.Control.If(v.Local.sFromJob.trim,=,"")
+	f.Intrinsic.UI.Msgbox("From Job hasn't been selected.")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("Select Job, Suffix, Part, Description, Customer, Date_Due From V_JOB_HEADER where date_closed = '1900-01-01' and job not like 'ZIND%' and job >= '{0}' and left(JOB,1) <> 'X' order by job, suffix",v.Local.sFromJob,v.Local.sSql)
+
+
+Function.Intrinsic.String.Split("Job*!*Suffix*!*Part*!*Description*!*Customer*!*Due Date","*!*",variable.local.sTitles)
+
+Function.Intrinsic.String.Split("1000*!*800*!*2000*!*3000*!*1000*!*1000","*!*",variable.local.iWidths)
+f.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+Function.Intrinsic.UI.Browser("Select a Job","conx",v.Local.sSql,Variable.Local.sTitles,Variable.Local.iWidths,Variable.Local.sRet)
+
+Function.Intrinsic.Control.If(Variable.Local.sRet,"<>","***CANCEL***")
+	Function.Intrinsic.String.Split(Variable.Local.sRet,"*!*",Variable.Local.sRet)
+
+' Function.Intrinsic.String.Concat("You selected ",Variable.Local.sRet(0),"-",Variable.Local.sRet(1),"  ",Variable.Local.sRet(3),Variable.Local.sTemp)
+	gui.fWOPick.txtToJob.Text(Variable.Local.sRet(0))
+	gui.fWOPick.txtToSuf.Text(Variable.Local.sRet(1))
+	
+	f.Intrinsic.control.If(v.screen.fWOPick!txtFrmJob.text.trim,=,"")
+		gui.fWOPick.txtFrmJob.Text(Variable.Local.sRet(0))
+		gui.fWOPick.txtFrmSuf.Text(Variable.Local.sRet(1))
+	f.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdBrTo_Click.End
+
+Program.Sub.cmdRmvFrmLst_Click.Start
+v.Local.sListAll.Declare(string)
+v.Local.sListSel.Declare(string)
+v.Local.sContent.Declare(String)
+v.Local.iIndex.Declare(Long)
+v.Local.iCount.Declare(Long)
+
+'remove from list
+
+gui.fWOPick.lvwWoRng.RetrieveSelectedListitems(v.Local.sListSel)
+F.Intrinsic.String.Split(v.Local.sListSel,"*!*",v.Local.sListSel)
+f.Intrinsic.Control.for(v.Local.iCount,0,v.Local.sListSel.UBound,1)
+	gui.fWOPick.lvwWoRng.RemoveItem(v.Local.sListSel(v.Local.iCount))
+f.Intrinsic.Control.Next(v.Local.icount)
+
+v.Local.sContent.set(v.screen.fWOPick!lvwWoRng.ListViewContents)
+gui.fWOPick.lvwWoRng.ClearItems
+f.Data.DataTable.CreateFromString("PopDT",v.Local.sContent,"From*!*to","String*!*String","*!*","$@$")
+f.Intrinsic.Control.For(v.Local.icount,0,v.DataTable.PopDT.RowCount--,1)
+	v.Global.iListCnt.set(v.Screen.fWOPick!lvwWoRng.ListItemCount)
+	gui.fWOPick.lvwWoRng.AddListItem(v.Global.iListCnt,v.DataTable.PopDT(v.Local.icount).From!FieldVal)
+	gui.fWOPick.lvwWoRng.SetListItemSubItemText(v.Global.iListCnt,1,v.DataTable.PopDT(v.Local.icount).To!FieldVal)
+f.Intrinsic.Control.Next(v.Local.icount)
+f.Data.DataTable.Close("PopDT")
+
+Program.Sub.cmdRmvFrmLst_Click.End
+
+Program.Sub.cmdClrLst_Click.Start
+gui.fWOPick.lvwWoRng.ClearItems
+Program.Sub.cmdClrLst_Click.End
+
+Program.Sub.cmdLoadDash_Click.Start
+v.Local.sContent.Declare(String)
+v.Local.sSQL.Declare(String)
+v.Local.sSQLAND.Declare(String)
+v.Local.iCount.Declare(Long)
+v.Local.sFrmJS.Declare(String)
+v.Local.sJS.Declare
+v.Local.sToJS.Declare(String)
+v.Local.bCheck.Declare
+v.Local.bExists.Declare
+v.Local.sSuffixStr.Declare(String)
+v.Local.sFile.Declare
+
+'this is where we load the secondary selection dashboard. where they can further filter down on specific jobs.
+
+v.Local.sContent.set(v.screen.fWOPick!lvwWoRng.ListViewContents)
+f.Data.DataTable.CreateFromString("PopDT",v.Local.sContent,"From*!*to","String*!*String","*!*","$@$")
+f.Intrinsic.Control.If(v.DataTable.PopDT.RowCount,=,0)
+	f.Intrinsic.UI.Msgbox("No range has been selected. You need to select a range of Wo's in order to load the dashboard.")
+	f.Intrinsic.control.ExitSub
+f.intrinsic.Control.EndIf	
+gui.fWOPick..enabled(false)
+f.Intrinsic.UI.InvokeWaitDialog("Compiling Data", "FlexSchedule")
+
+
+f.Intrinsic.Control.If(v.Caller.Switches,=,"I")
+	f.Intrinsic.String.Build("C:\Users\{0}\AppData\Local\Temp\FLEXENTRY.txt",v.System.UserName,v.Local.sFile)
+	f.Intrinsic.File.Exists(v.Local.sFile,v.Local.bExists)
+	f.Intrinsic.Control.If(v.Local.bExists)
+		f.Intrinsic.File.File2String(v.Local.sFile,v.Local.sJS)
+		f.Intrinsic.String.Replace(v.Local.sJS,v.Ambient.NewLine,"','",v.Local.sJS)
+		f.Intrinsic.String.Build("'{0}'",v.Local.sJS,v.Local.sJS)
+		f.Intrinsic.Control.If(v.Local.sJS.Trim,=,"")
+			f.Intrinsic.UI.Msgbox("The import file is empty.")
+			f.Intrinsic.Control.CallSub(unload_all)
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.string.build("Select CAST(1 AS BIT) AS Selected,job + suffix as JS,Job, Suffix, RTRIM(Part) as PART, RTRIM(Description) as Description, Customer, Date_Due,RTRIM(' ') as WC1,RTRIM(' ') as  WC2,RTRIM(' ') as  WC3,RTRIM(' ') as  WC4,RTRIM(' ') as  WC5, RTRIM(' ') as WC6,RTRIM(' ') as  WC7,RTRIM(' ') as  WC8,RTRIM(' ') as  WC9,RTRIM(' ') as  WC10,RTRIM(' ') as  WC11,RTRIM(' ') as  WC12 From V_JOB_HEADER where date_closed = '1900-01-01' and job not like 'ZIND%' and job + suffix in ({0})",v.Local.sJS,v.Local.sSQL)
+		f.Intrinsic.File.DeleteFile(v.Local.sFile)
+		f.Intrinsic.Control.GoTo("Skip4Import")
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("The import file does not exist.")
+		f.Intrinsic.Control.CallSub(unload_all)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+
+'fetch all selected WO ranges, format them in Job suffix format and dynamically build sql statement to bring in all selected WO ranges.
+f.Intrinsic.Control.For(v.Local.iCount,0,v.DataTable.PopDT.RowCount--,1)
+	f.Intrinsic.string.build("{0}",v.DataTable.PopDT(v.Local.icount).From!FieldVal,v.Local.sFrmJS)
+	f.Intrinsic.string.build("{0}",v.DataTable.PopDT(v.Local.icount).To!FieldVal,v.Local.sToJS)
+	f.intrinsic.String.Replace(v.Local.sFrmJS,"-","",v.Local.sFrmJS)
+	f.intrinsic.String.Replace(v.Local.sToJS,"-","",v.Local.sToJS)
+	
+	f.Intrinsic.Control.If(v.Local.iCount,=,0)
+		
+		f.Intrinsic.string.build("Select CAST(1 AS BIT) AS Selected,job + suffix as JS,Job, Suffix, RTRIM(Part) as PART, RTRIM(Description) as Description, Customer, Date_Due,RTRIM(' ') as WC1,RTRIM(' ') as  WC2,RTRIM(' ') as  WC3,RTRIM(' ') as  WC4,RTRIM(' ') as  WC5, RTRIM(' ') as WC6,RTRIM(' ') as  WC7,RTRIM(' ') as  WC8,RTRIM(' ') as  WC9,RTRIM(' ') as  WC10,RTRIM(' ') as  WC11,RTRIM(' ') as  WC12 From V_JOB_HEADER where date_closed = '1900-01-01' and job not like 'ZIND%' and ((job + suffix >= '{0}' and job + suffix <= '{1}')",v.local.sFrmJS,v.local.sToJS,v.Local.sSQL)
+	
+	f.Intrinsic.Control.Else
+		f.Intrinsic.string.Concat(v.Local.sSQL," or (job + suffix >= '",v.local.sFrmJS,"' and job + suffix <= '",v.Local.sToJS,"')",v.Local.sSQL)
+	
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Next(v.Local.icount)
+' am i doing this all over again.. looks like it.... 
+f.Intrinsic.Control.For(v.Local.iCount,0,v.DataTable.PopDT.RowCount--,1)
+	f.Intrinsic.string.build("{0}",v.DataTable.PopDT(v.Local.icount).From!FieldVal,v.Local.sFrmJS)
+	f.Intrinsic.string.build("{0}",v.DataTable.PopDT(v.Local.icount).To!FieldVal,v.Local.sToJS)
+	f.intrinsic.String.Replace(v.Local.sFrmJS,"-","",v.Local.sFrmJS)
+	f.intrinsic.String.Replace(v.Local.sToJS,"-","",v.Local.sToJS)
+	
+	f.Intrinsic.Control.If(v.Local.iCount,=,0)
+		
+		f.Intrinsic.string.build("and ((job + suffix >= '{0}' and job + suffix <= '{1}')",v.local.sFrmJS,v.local.sToJS,v.Local.sSQLAND)
+	
+	f.Intrinsic.Control.Else
+		f.Intrinsic.string.Concat(v.Local.sSQL," or (job + suffix >= '",v.local.sFrmJS,"' and job + suffix <= '",v.Local.sToJS,"')",v.Local.sSQLAND)
+	
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Next(v.Local.icount)
+
+
+f.Data.DataTable.Close("PopDT")
+f.Intrinsic.string.Concat(v.Local.sSQL,")",v.Local.sSQL)
+f.Intrinsic.string.Concat(v.Local.sSQLAND,")",v.Local.sSQLAND)
+f.Intrinsic.Control.Label("Skip4Import")
+
+'this is my main DT that i will project to the grid
+f.data.DataTable.CreateFromSQL("WODT","conx",v.Local.sSQL,true)
+'now i'm bringing all labor hours against their main work centers in a datatable
+
+f.Data.Datatable.CreateFromSQL("ParentTempDT","conx","Select job + suffix as JS,RTRIM(part) as PART,sum(hours_estimated) as hours_estimated from V_JOB_OPERATIONS where LMO = 'L' and date_completed = '1900-01-01' and part in ('#TPS','1CT3','1EB1','1EB2','#TCN','1ML3','2CS1','2CS3','2EB1','2EB2','2ML1','2ML3') group by JS,part")
+'the next genius thing i do is create dictionaries for each WC so i can segregate them into individual columns in the parent grid that we load(this is done by creating dictionaries from the resulting datatable(or is it views) and loading from these dictionaries).
+
+f.Data.DataView.Create("ParentTempDT","ParentTempVw",22,"[part] = '#TPS'","")
+f.Data.DataView.ToDataTable("ParentTempDT","ParentTempVw","tempDictDT")
+f.Data.Dictionary.CreateFromDataTable("Tempdict","tempDictDT","JS","Hours_Estimated")
+
+f.Data.DataTable.Close("tempDictDT")
+
+f.Data.Dictionary.SetDefaultReturn("Tempdict",0)
+f.Data.DataTable.FillFromDictionary("WODT","Tempdict","JS","WC1")
+f.Data.DataView.Close("ParentTempDT","ParentTempVw")
+f.Data.dictionary.Close("Tempdict")
+
+f.Data.DataView.Create("ParentTempDT","ParentTempVw",22,"[part] = '1CT3'","")
+f.Data.DataView.ToDataTable("ParentTempDT","ParentTempVw","tempDictDT")
+f.Data.Dictionary.CreateFromDataTable("Tempdict","tempDictDT","JS","Hours_Estimated")
+f.Data.DataView.Close("ParentTempDT","ParentTempVw")
+f.Data.DataTable.Close("tempDictDT")
+
+f.Data.Dictionary.SetDefaultReturn("Tempdict",0)
+f.Data.DataTable.FillFromDictionary("WODT","Tempdict","JS","WC2")
+f.Data.dictionary.Close("Tempdict")
+
+
+
+f.Data.DataView.Create("ParentTempDT","ParentTempVw",22,"[part] = '1EB1'","")
+f.Data.DataView.ToDataTable("ParentTempDT","ParentTempVw","tempDictDT")
+f.Data.Dictionary.CreateFromDataTable("Tempdict","tempDictDT","JS","Hours_Estimated")
+f.Data.DataView.Close("ParentTempDT","ParentTempVw")
+f.Data.DataTable.Close("tempDictDT")
+
+f.Data.Dictionary.SetDefaultReturn("Tempdict",0)
+f.Data.DataTable.FillFromDictionary("WODT","Tempdict","JS","WC3")
+f.Data.dictionary.Close("Tempdict")
+
+f.Data.DataView.Create("ParentTempDT","ParentTempVw",22,"[part] = '1EB2'","")
+f.Data.DataView.ToDataTable("ParentTempDT","ParentTempVw","tempDictDT")
+f.Data.Dictionary.CreateFromDataTable("Tempdict","tempDictDT","JS","Hours_Estimated")
+f.Data.DataView.Close("ParentTempDT","ParentTempVw")
+f.Data.DataTable.Close("tempDictDT")
+
+f.Data.Dictionary.SetDefaultReturn("Tempdict",0)
+f.Data.DataTable.FillFromDictionary("WODT","Tempdict","JS","WC4")
+f.Data.dictionary.Close("Tempdict")
+
+
+f.Data.DataView.Create("ParentTempDT","ParentTempVw",22,"[part] = '#TCN'","")
+f.Data.DataView.ToDataTable("ParentTempDT","ParentTempVw","tempDictDT")
+f.Data.Dictionary.CreateFromDataTable("Tempdict","tempDictDT","JS","Hours_Estimated")
+f.Data.DataView.Close("ParentTempDT","ParentTempVw")
+f.Data.DataTable.Close("tempDictDT")
+
+f.Data.Dictionary.SetDefaultReturn("Tempdict",0)
+f.Data.DataTable.FillFromDictionary("WODT","Tempdict","JS","WC5")
+f.Data.dictionary.Close("Tempdict")
+
+
+f.Data.DataView.Create("ParentTempDT","ParentTempVw",22,"[part] = '1ML3'","")
+f.Data.DataView.ToDataTable("ParentTempDT","ParentTempVw","tempDictDT")
+f.Data.Dictionary.CreateFromDataTable("Tempdict","tempDictDT","JS","Hours_Estimated")
+f.Data.DataView.Close("ParentTempDT","ParentTempVw")
+f.Data.DataTable.Close("tempDictDT")
+
+f.Data.Dictionary.SetDefaultReturn("Tempdict",0)
+f.Data.DataTable.FillFromDictionary("WODT","Tempdict","JS","WC6")
+f.Data.dictionary.Close("Tempdict")
+
+f.Data.DataView.Create("ParentTempDT","ParentTempVw",22,"[part] = '2CS1'","")
+f.Data.DataView.ToDataTable("ParentTempDT","ParentTempVw","tempDictDT")
+f.Data.Dictionary.CreateFromDataTable("Tempdict","tempDictDT","JS","Hours_Estimated")
+f.Data.DataView.Close("ParentTempDT","ParentTempVw")
+f.Data.DataTable.Close("tempDictDT")
+
+f.Data.Dictionary.SetDefaultReturn("Tempdict",0)
+f.Data.DataTable.FillFromDictionary("WODT","Tempdict","JS","WC7")
+f.Data.dictionary.Close("Tempdict")
+
+
+f.Data.DataView.Create("ParentTempDT","ParentTempVw",22,"[part] = '2CS3'","")
+f.Data.DataView.ToDataTable("ParentTempDT","ParentTempVw","tempDictDT")
+f.Data.Dictionary.CreateFromDataTable("Tempdict","tempDictDT","JS","Hours_Estimated")
+f.Data.DataView.Close("ParentTempDT","ParentTempVw")
+f.Data.DataTable.Close("tempDictDT")
+
+f.Data.Dictionary.SetDefaultReturn("Tempdict",0)
+f.Data.DataTable.FillFromDictionary("WODT","Tempdict","JS","WC8")
+f.Data.dictionary.Close("Tempdict")
+
+f.Data.DataView.Create("ParentTempDT","ParentTempVw",22,"[part] = '2EB1'","")
+f.Data.DataView.ToDataTable("ParentTempDT","ParentTempVw","tempDictDT")
+f.Data.Dictionary.CreateFromDataTable("Tempdict","tempDictDT","JS","Hours_Estimated")
+f.Data.DataView.Close("ParentTempDT","ParentTempVw")
+f.Data.DataTable.Close("tempDictDT")
+
+f.Data.Dictionary.SetDefaultReturn("Tempdict",0)
+f.Data.DataTable.FillFromDictionary("WODT","Tempdict","JS","WC9")
+f.Data.dictionary.Close("Tempdict")
+
+
+f.Data.DataView.Create("ParentTempDT","ParentTempVw",22,"[part] = '2EB2'","")
+f.Data.DataView.ToDataTable("ParentTempDT","ParentTempVw","tempDictDT")
+f.Data.Dictionary.CreateFromDataTable("Tempdict","tempDictDT","JS","Hours_Estimated")
+f.Data.DataView.Close("ParentTempDT","ParentTempVw")
+f.Data.DataTable.Close("tempDictDT")
+
+f.Data.Dictionary.SetDefaultReturn("Tempdict",0)
+f.Data.DataTable.FillFromDictionary("WODT","Tempdict","JS","WC10")
+f.Data.dictionary.Close("Tempdict")
+
+f.Data.DataView.Create("ParentTempDT","ParentTempVw",22,"[part] = '2ML1'","")
+f.Data.DataView.ToDataTable("ParentTempDT","ParentTempVw","tempDictDT")
+f.Data.Dictionary.CreateFromDataTable("Tempdict","tempDictDT","JS","Hours_Estimated")
+f.Data.DataView.Close("ParentTempDT","ParentTempVw")
+f.Data.DataTable.Close("tempDictDT")
+
+f.Data.Dictionary.SetDefaultReturn("Tempdict",0)
+f.Data.DataTable.FillFromDictionary("WODT","Tempdict","JS","WC11")
+f.Data.dictionary.Close("Tempdict")
+
+
+f.Data.DataView.Create("ParentTempDT","ParentTempVw",22,"[part] = '2ML3'","")
+f.Data.DataView.ToDataTable("ParentTempDT","ParentTempVw","tempDictDT")
+f.Data.Dictionary.CreateFromDataTable("Tempdict","tempDictDT","JS","Hours_Estimated")
+f.Data.DataView.Close("ParentTempDT","ParentTempVw")
+f.Data.DataTable.Close("tempDictDT")
+
+f.Data.Dictionary.SetDefaultReturn("Tempdict",0)
+f.Data.DataTable.FillFromDictionary("WODT","Tempdict","JS","WC12")
+f.Data.dictionary.Close("Tempdict")
+
+f.Data.DataTable.Close("ParentTempDT")
+
+
+
+f.Data.dataview.Create("WODT","WODTVw",22)
+
+' create the grid and format it 
+gui.fWOSelForFlex.GsGcWO.AddGridviewFromDataview("WOGRID","WODT","WODTVw")
+
+f.Data.dataview.ToString("WODT","WODTVw","Suffix","",",",v.Local.sSuffixStr)
+'customer wanted to differentiate what he sees by checking if any of the suffixes has STR. they see certain column based on if the suffixes contain STR or no 
+f.Intrinsic.String.IsInString(v.Local.sSuffixStr,"STR",true,v.Local.bCheck)
+
+f.Intrinsic.Control.If(v.Local.bCheck)
+	Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC2", "visible", false)
+	Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC3", "visible", false)
+	Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC4", "visible", false)
+	Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC6", "visible", false)
+	
+f.Intrinsic.Control.Else
+	Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC7", "visible", false)
+	Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC8", "visible", false)
+	Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC9", "visible", false)
+	Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC10", "visible", false)
+	Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC11", "visible", false)
+	Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC12", "visible", false)	
+f.Intrinsic.Control.EndIf
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "JS", "visible", false)
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Selected", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Selected", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Selected", "ReadOnly", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Selected", "AllowEdit", True)
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Job", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Job", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Job", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Job", "AllowEdit", False)
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Suffix", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Suffix", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Suffix", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Suffix", "AllowEdit", False)
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Part", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Part", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Part", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Part", "AllowEdit", False)
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Description", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Description", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Description", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Description", "AllowEdit", False)
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Customer", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Customer", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Customer", "caption", "Customer No.")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Customer", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Customer", "AllowEdit", False)
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Date_Due", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Date_Due", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Date_Due", "caption", "Due Date")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Date_Due", "DisplayCustomDatetime", "d")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Date_Due", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Date_Due", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "Date_Due", "CellHAlignment ", "center")
+
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC1", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC1", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC1", "caption", "Hrs on #TPS")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC1", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC1", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC1", "CellHAlignment ", "center")
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC2", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC2", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC2", "caption", "Hrs on 1CT3")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC2", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC2", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC2", "CellHAlignment ", "center")
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC3", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC3", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC3", "caption", "Hrs on 1EB1")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC3", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC3", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC3", "CellHAlignment ", "center")
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC4", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC4", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC4", "caption", "Hrs on 1EB2")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC4", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC4", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC4", "CellHAlignment ", "center")
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC5", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC5", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC5", "caption", "Hrs on #TCN")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC5", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC5", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC5", "CellHAlignment ", "center")
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC6", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC6", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC6", "caption", "Hrs on 1ML3")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC6", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC6", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC6", "CellHAlignment ", "center")
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC7", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC7", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC7", "caption", "Hrs on 2CS1")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC7", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC7", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC7", "CellHAlignment ", "center")
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC8", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC8", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC8", "caption", "Hrs on 2CS3")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC8", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC8", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC8", "CellHAlignment ", "center")
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC9", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC9", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC9", "caption", "Hrs on 2EB1")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC9", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC9", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC9", "CellHAlignment ", "center")
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC10", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC10", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC10", "caption", "Hrs on 2EB2")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC10", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC10", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC10", "CellHAlignment ", "center")
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC11", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC11", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC11", "caption", "Hrs on 2ML1")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC11", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC11", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC11", "CellHAlignment ", "center")
+
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC12", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC12", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC12", "caption", "Hrs on 2ML3")
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC12", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC12", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGcWO.SetColumnProperty("WOGRID", "WC12", "CellHAlignment ", "center")
+'
+
+
+f.Intrinsic.UI.CloseWaitDialog
+gui.fWOSelForFlex.GsGcWO.MainView("WOGRID")
+gui.fWOPick..Visible(false)
+gui.fWOSelForFlex..Show
+Program.Sub.cmdLoadDash_Click.End
+
+Program.Sub.fWOSelForFlex_UnLoad.Start
+gui.fWOSelForFlex..Visible(false)
+gui.fWOSelForFlex.GsGCWCSel.SuspendLayout
+gui.fWOSelForFlex.GsGcWO.SuspendLayout
+gui.fWOSelForFlex.GsGCWO.ClearRows("WOGRID")
+'unload this thing already.
+
+f.Intrinsic.Control.If(v.DataTable.WCDT.Exists,=,true)
+
+	f.Data.DataView.Close("WCDT$RMDT","RMVW")
+	f.Data.DataTable.Close("WCDT$RMDT")
+	f.Data.DataView.Close("WCDT","WCVW")
+	f.Data.DataTable.Close("WCDT")
+	gui.fWOSelForFlex.GsGCWCSel.ClearRows("WCGRID")
+f.Intrinsic.Control.EndIf
+
+f.Data.DataView.Close("WODT","WODTVw")
+f.Data.DataTable.Close("WODT")
+gui.fWOSelForFlex.GsGCWCSel.ResumeLayout
+gui.fWOSelForFlex.GsGcWO.ResumeLayout
+gui.fWOPick..Visible(True)
+gui.fWOPick..enabled(True)
+gui.fWOPick..SetFocus
+
+Program.Sub.fWOSelForFlex_UnLoad.End
+
+Program.Sub.txtFrmSuf_LostFocus.Start
+f.Intrinsic.Control.If(v.Screen.fWOPick!txtToJob.text.trim,<>,"")
+	F.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+gui.fWOPick.txtToJob.Text(v.Screen.fWOPick!txtFrmJob.Text)
+gui.fWOPick.txtToSuf.Text(v.Screen.fWOPick!txtFrmSuf.Text)
+
+Program.Sub.txtFrmSuf_LostFocus.End
+
+Program.Sub.unload_all.Start
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+Program.Sub.unload_all.End
+
+Program.Sub.cmdGenFlexSched_Click.Start
+v.Local.sSQL.Declare(String)
+v.Local.sSelJobs.Declare(String)
+v.Local.iCount.Declare(Long)
+v.Local.iCheck.Declare(Long,0)
+V.Local.iIncrement.Declare(Long)
+V.Local.iRet.Declare(Long)
+V.Local.sScheduleNumber.Declare(String)
+V.Local.sMJob.Declare(String)
+V.Local.sMSuffix.Declare(String)
+V.Local.sMSeq.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sWCs.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.sFiller.Declare(String)
+V.Local.sWorkCenter.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sFiller2.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.sFileName.Declare(String)
+V.Local.sMsg.Declare(String)
+V.Local.bWhoa.Declare(Boolean)
+V.Local.sOut.Declare(String)
+V.Local.sOutFile.Declare(String)
+'this is the sub that checks all of the selected data before actually creating the flex schedules.
+f.Data.Dataview.Create("WODT","SelWOVw",22,"Selected = 1","")
+f.Intrinsic.Control.If(v.Dataview.WODT!SelWOVw.RowCount,=,0)
+	f.Intrinsic.UI.Msgbox("No work orders have been selected to generate Flex Schedule.")
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+gui.fWOSelForFlex..Enabled(false)
+'getting selected jobs and formatting them.
+f.Data.dataview.ToString("WODT","SelWOVw","Job*!*Suffix","","','",v.Local.sSelJobs)
+
+f.Intrinsic.String.Concat("'",v.Local.sSelJobs,"'",v.Local.sSelJobs)
+v.Global.sSelJobs.Set(v.Local.sSelJobs)
+f.data.DataView.Close("WODT","SelWOVw")
+f.Data.Dataview.Create("WCDT","SelWCVw",22,"SelectWC = 1","")
+
+f.Intrinsic.Control.If(v.DataView.WCDT!SelWCVw.RowCount,>,0)
+	'dont be mislead, i am creating the first statement before the for loop
+	f.Intrinsic.String.Build("No Raw materials were selected for the following Workcenters : {0}",v.Ambient.NewLine,v.Local.sMsg)
+	'loop and check if raw mat is selected. if not, build message for prompy.
+	f.Intrinsic.Control.for(v.Local.iCount,0,v.DataView.WCDT!SelWCVw.RowCount--,1)
+		V.Local.sWorkCenter.Set(v.DataView.WCDT!SelWCVw(V.Local.iCount).WC.FieldValTrim)	
+		f.Intrinsic.String.Build("SelectRM = 1 and WC = '{0}'",V.Local.sWorkCenter,v.Local.sFilter)
+		f.Data.DataView.Create("WCDT$RMDT","SelRem2WC",22,v.Local.sFilter,"")
+		f.Intrinsic.Control.If(v.DataView.WCDT$RMDT!SelRem2WC.RowCount,=,0)
+			f.Intrinsic.String.Build("{0}{1}{2}{3}{4}",v.Local.sMsg,v.Ambient.Tab,V.Local.sWorkCenter,v.Ambient.NewLine,"Do you want to continue with creating flex schedules?",v.Local.sMsg)
+			v.Local.bWhoa.Set(True)
+		f.Intrinsic.Control.EndIf
+		f.data.DataView.Close("WCDT$RMDT","SelRem2WC")
+	f.Intrinsic.Control.Next(v.Local.iCount)
+	f.Intrinsic.Control.If(v.Local.bWhoa,=,true)
+		'yes or no. if they want to proceed, the program will automatically assign the  material sequence immediately preceding the labor sequence and assign that. THis is because a raw mat sequence is needed to create a schedule 
+		f.Intrinsic.UI.Msgbox(v.Local.sMsg,"Warning!",4,v.Local.iRet)
+		f.Intrinsic.Control.If(v.Local.iRet,=,7)
+			f.data.DataView.Close("WCDT","SelWCVw")
+			gui.fWOSelForFlex..Enabled(True)
+			gui.fWOSelForFlex..SetFocus
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf	
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+'check if WC selection is zero and if not move forward with next check
+f.Intrinsic.Control.If(v.DataView.WCDT!SelWCVw.RowCount,=,0)
+	f.Intrinsic.UI.Msgbox("No Work centers were selected to group the flex schedule by.")
+	f.data.DataView.Close("WCDT","SelWCVw")
+	gui.fWOSelForFlex..Enabled(True)
+	gui.fWOSelForFlex..SetFocus
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.Else
+	
+
+	f.Intrinsic.UI.InvokeWaitDialog("Generating Flex Schedule")
+	f.Data.DataView.ToString("WCDT","SelWCVw","WC","","','",v.local.sWCs)
+	'check to see if there are any selected groupings that are eligible for creation of flexc schedule based on if the jobs are already in another flex schedule
+'	f.Intrinsic.String.Build("Select count(Job) from v_job_operations where job + suffix in ({0}) and job + suffix + seq not in (select distinct job + suffix + labor_seq as JSS from JOB_CT_FLX_SCHD where flag_closed <> 'Y' ) and part in ('{1}') and LMO = 'L' and flag_closed <> 'Y' and seq < '995000' ",v.Global.sSelJobs,v.Local.sWCs,v.Local.sSQL)
+	f.Intrinsic.String.Build("Select count(Job) from v_job_operations where job + suffix in ({0}) and job + suffix + seq not in (select distinct job + suffix + labor_seq as JSS from V_JOB_CT_FLX_SCHD where flag_closed <> 'Y' ) and part in ('{1}') and LMO = 'L' and flag_closed <> 'Y' and seq < '995000' ",v.Global.sSelJobs,v.Local.sWCs,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.iCount)
+	f.Intrinsic.Control.If(v.Local.iCount,=,0)
+		f.Intrinsic.UI.Msgbox("No possible flex schedules can be created for the selected Workcenters as they already exist in active flex schedules.")
+		f.data.DataView.Close("WCDT","SelWCVw")
+		gui.fWOSelForFlex..Enabled(True)
+		gui.fWOSelForFlex..SetFocus
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	'retrieve information of jobs that are already in flex schedule and build message to display those jobs and to check if the user wants to continue.
+'	f.Intrinsic.String.Build("Select JOB,Suffix,Seq,part from v_job_operations where job + suffix in ({0}) and job + suffix + seq in (select distinct job + suffix + labor_seq as JSS from JOB_CT_FLX_SCHD where flag_closed <> 'Y' ) and part in ('{1}') and LMO = 'L' and flag_closed <> 'Y' and seq < '995000' order by job,suffix,seq ",v.Global.sSelJobs,v.Local.sWCs,v.Local.sSQL)
+	f.Intrinsic.String.Build("Select a.JOB,a.Suffix,a.Seq,a.part from v_job_operations a inner join V_JOB_CT_FLX_SCHD b on a.job = b.job and a.suffix = b.suffix  and a.seq = b.labor_seq where a.job + a.suffix in ({0}) and b.flag_closed <> 'Y' and a.part in ('{1}') and a.LMO = 'L' and a.flag_closed <> 'Y' and a.seq < '995000' order by a.job,a.suffix,a.seq ",v.Global.sSelJobs,v.Local.sWCs,v.Local.sSQL)
+	f.Data.DataTable.CreateFromSQL("FlexExistDT","conx",v.Local.sSQL)
+	
+	f.Intrinsic.Control.If(v.DataTable.FlexExistDT.RowCount,>,0)
+		f.Data.dataview.Create("FlexExistDT","FlexExistVw",22)
+		f.Data.DataView.ToString("FlexExistDT","FlexExistVw","JOB*!*Suffix*!*Seq*!*part",v.Ambient.Tab,v.Ambient.NewLine,v.Local.sOut)
+		f.Data.Dataview.Close("FlexExistDT","FlexExistVw")		
+		f.Data.DataTable.Close("FlexExistDT")
+		f.Intrinsic.String.Build("{0}\OutFile_{1}_{2}.txt",v.Caller.TempDir,v.Caller.User,v.Ambient.Date.PervasiveDate,v.Local.sOutFile)
+		f.Intrinsic.File.String2File(v.Local.sOutFile,v.Local.sOut)
+		f.Intrinsic.String.Build("Flex schedules won't be created for the following jobs as they already exist in other flex schedules.{0} Do you want to proceed with creating flex schedules for the remaining jobs?{0} The list can be found in the file: {1}{0}{0}{2}",v.Ambient.NewLine,v.Local.sOutFile,v.Local.sOut,v.Local.sMsg)
+		f.Intrinsic.UI.Msgbox(v.Local.sMsg,"Warning!!!",4,v.Local.iRet)
+		f.Intrinsic.Control.If(v.Local.iRet,=,7)
+			f.data.DataView.Close("WCDT","SelWCVw")
+			gui.fWOSelForFlex..Enabled(True)
+			gui.fWOSelForFlex..SetFocus
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	'based on if it is a WC or WG call the respective sub
+	f.Intrinsic.Control.for(v.Local.iCount,0,v.DataView.WCDT!SelWCVw.RowCount--,1)
+		v.Global.sWC.Set(v.DataView.WCDT!SelWCVw(V.Local.iCount).WC.FieldValTrim)	
+		f.intrinsic.Control.If(v.Global.sWC,=,"#TPS","OR",v.Global.sWC,=,"#TCN")
+			f.Intrinsic.Control.CallSub(FlexForWG)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Control.CallSub(FlexForWC)
+		f.Intrinsic.Control.EndIf
+		v.Global.sWC.Set("")
+	f.Intrinsic.Control.Next(v.Local.iCount)
+	f.Intrinsic.ui.CloseWaitDialog
+f.Intrinsic.Control.EndIf
+
+
+gui.fWOSelForFlex..Enabled(True)
+gui.fWOSelForFlex..Visible(False)
+f.Intrinsic.Control.CallSub(MatOptLoad)
+Program.Sub.cmdGenFlexSched_Click.End
+
+Program.Sub.FlexForWC.Start
+v.Local.sSQL.Declare(String)
+v.Local.sSelJobs.Declare(String)
+v.Local.sRM.Declare(String)
+v.Local.iCount.Declare(Long)
+v.Local.iCount1.Declare(Long)
+V.Local.iIncrement.Declare(Long)
+V.Local.sIncrement.Declare(String)
+V.Local.sScheduleNumber.Declare(String)
+V.Local.sMJob.Declare(String)
+V.Local.sMSuffix.Declare(String)
+V.Local.sMSeq.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sFiller.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.sFilter1.Declare(String)
+V.Local.sWorkCenter.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sFiller2.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.sLineCheck.Declare(String)
+V.Local.sFileName.Declare(String)
+
+'get jobs associated with the selection
+f.Intrinsic.String.Build("Select JOB,Suffix,Seq,part from v_job_operations where job + suffix in ({0}) and job + suffix + seq not in (select distinct job + suffix + labor_seq as JSS from V_JOB_CT_FLX_SCHD where flag_closed <> 'Y' ) and LMO = 'L' and flag_closed <> 'Y' and part = '{1}' and seq < '995000' order by job,suffix,seq ",v.Global.sSelJobs,V.Global.sWC,v.Local.sSQL)
+f.Data.DataTable.CreateFromSQL("GenFlxDT","conx",v.Local.sSQL)
+
+'build filter to check for selected Raw mat.
+f.Intrinsic.String.Build("SelectRM = 1 and WC = '{0}'",v.Global.sWC,v.Local.sFilter)
+
+f.Data.DataView.Create("WCDT$RMDT","Rem2WCVW",22,v.Local.sFilter,"")
+f.Data.dataview.ToString("WCDT$RMDT","Rem2WCVW","RM","","','",v.Local.sRM)
+
+f.Intrinsic.String.Concat("'",v.Local.sRM,"'",v.Local.sRM)
+
+f.Data.DataView.Close("WCDT$RMDT","Rem2WCVW")
+
+'build data table for selected raw mat.
+f.Intrinsic.String.Build("Select JOB,Suffix,Seq,part as RM from v_job_operations where job + suffix in ({0}) and LMO = 'M' and flag_closed <> 'Y' and part in ({1}) and seq < '995000' order by job,suffix,seq ",v.Global.sSelJobs,v.Local.sRM,v.Local.sSQL)
+f.Data.DataTable.CreateFromSQL("RMLPDT","conx",v.Local.sSQL)
+
+f.Intrinsic.Control.If(v.DataTable.GenFlxDT.RowCount,=,0)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+'get the highest flex schedule number to be used(this will be incremented by 1 when creating the flex schedule).
+f.ODBC.Connection!conx.GetID("V_JOB_CT_FLX_SCHD","SCHEDULE",TRUE,V.Local.sScheduleNumber)
+F.Intrinsic.String.Format(V.Local.sScheduleNumber,"000000",V.Local.sScheduleNumber)
+
+
+
+F.Intrinsic.Control.For(V.Local.iCount,0,v.DataTable.GenFlxDT.RowCount--,1)
+	
+    F.Intrinsic.Control.If(v.DataTable.GenFlxDT(v.Local.iCount).Job!FieldValTrim,<>,"")
+    	V.Local.sJob.Set(v.DataTable.GenFlxDT(v.Local.iCount).Job!FieldValTrim)
+	    V.Local.sSuffix.Set(v.DataTable.GenFlxDT(v.Local.iCount).Suffix!FieldValTrim)
+        F.Intrinsic.String.RPad(V.Local.sJob," ",6,V.Local.sJob)
+		F.Intrinsic.String.RPad(V.Local.sSuffix," ",3,V.Local.sSuffix)
+       'building filters for current job and suffix in the looped data table. this is to get the associate raw mat sequences for the data.
+        f.Intrinsic.String.Build("JOB = '{0}' and SUFFIX = '{1}'",V.Local.sJob,v.Local.sSuffix,v.Local.sFilter1)
+        f.Data.DataView.Create("RMLPDT","RetRMSeqVw",22,v.Local.sFilter1,"")
+		f.Intrinsic.Control.If(v.DataView.RMLPDT!RetRMSeqVw.RowCount,=,0)
+			f.Data.DataView.Close("RMLPDT","RetRMSeqVw")
+			f.Intrinsic.String.Build("JOB = '{0}' and SUFFIX = '{1}'",V.Local.sJob.trim,v.Local.sSuffix.trim,v.Local.sFilter1)
+		f.Data.DataView.Create("RMLPDT","RetRMSeqVw",22,v.Local.sFilter1,"")
+		f.Intrinsic.Control.EndIf
+		f.Data.DataView.ToDataTable("RMLPDT","RetRMSeqVw","RMFLTDT")
+        f.Data.DataView.close("RMLPDT","RetRMSeqVw")
+		'if there is no sequences, that means the raw mat was not selected in which case we manually query for the preceding raw mat sequence, else we use the selected raw mat sequences
+		
+		f.Intrinsic.Control.If(v.DataTable.RMFLTDT.RowCount,=,0)
+			'Add increment
+	        F.Intrinsic.Math.Add(V.Local.iIncrement,1,V.Local.iIncrement)
+	        F.Intrinsic.String.Format(V.Local.iIncrement,"000000",V.Local.sIncrement)
+			V.Local.sMJob.Set(V.Local.sJob)
+		    V.Local.sMSuffix.Set(V.Local.sSuffix)
+		    V.Local.sSeq.Set(v.DataTable.GenFlxDT(v.Local.iCount).Seq!FieldValTrim)
+		    V.Local.sMSeq.Set("")
+		    V.Local.sPart.Set("")
+		    F.Intrinsic.String.Build("SELECT TOP 1 SEQ, PART FROM V_JOB_OPERATIONS WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SEQ < '{2}' and LMO = 'M' ORDER BY SEQ ASC",V.Local.sJob,V.Local.sSuffix,V.Local.sSeq,V.Local.sSQL)
+		    F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sMSeq)
+	        F.Intrinsic.String.Replace(V.Local.sMSeq,"*!*","",V.Local.sMSeq)
+	        F.Intrinsic.String.Split(V.Local.sMSeq,"*!*",V.Local.sMSeq)
+	        V.Local.sMSeq.RedimPreserve(0,1)
+	        V.Local.sPart.Set(V.Local.sMSeq(1))
+	        V.Local.sMSeq.RedimPreserve(0,0)
+		   
+		    V.Local.sWorkCenter.Set(v.DataTable.GenFlxDT(v.Local.iCount).part!FieldValTrim)
+		    V.Local.sFiller.Set("000000999999")
+		    V.Local.sFiller2.Set("000000999999")
+		    'padd all of the paramaters to fit into the file
+		       
+	        F.Intrinsic.String.RPad(V.Local.sScheduleNumber," ",9,V.Local.sScheduleNumber)
+	        
+	        F.Intrinsic.String.RPad(V.Local.sIncrement," ",6,V.Local.sIncrement)
+	        F.Intrinsic.String.RPad(V.Local.sMJob," ",6,V.Local.sMJob)
+	        F.Intrinsic.String.RPad(V.Local.sMSuffix," ",3,V.Local.sMSuffix)
+	        F.Intrinsic.String.RPad(V.Local.sMSeq," ",11,V.Local.sMSeq)
+	        
+	        F.Intrinsic.String.RPad(V.Local.sJob," ",6,V.Local.sJob)
+	        F.Intrinsic.String.RPad(V.Local.sSuffix," ",3,V.Local.sSuffix)
+	        F.Intrinsic.String.RPad(V.Local.sSeq," ",6,V.Local.sSeq)
+	        F.Intrinsic.String.RPad(V.Local.sFiller," ",37,V.Local.sFiller)
+	        F.Intrinsic.String.RPad(V.Local.sWorkCenter," ",4,V.Local.sWorkCenter)
+	        F.Intrinsic.String.RPad(V.Local.sPart," ",25,V.Local.sPart)
+	        F.Intrinsic.String.RPad(V.Local.sFiller2," ",12,V.Local.sFiller2)
+	        F.Intrinsic.String.Build("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}",V.Local.sLine,V.Local.sScheduleNumber,V.Local.sIncrement,V.Local.sMJob,V.Local.sMSuffix,V.Local.sMSeq,V.Local.sJob,V.Local.sSuffix,V.Local.sSeq,V.Local.sFiller,V.Local.sWorkCenter,V.Local.sPart,V.Local.sFiller2,V.Ambient.NewLine,V.Local.sLine)
+			
+		f.Intrinsic.Control.Else
+			'use selected raw mat sequences.
+	        f.Intrinsic.Control.For(v.Local.iCount1,0,v.DataTable.RMFLTDT.RowCount--,1)
+	        	V.Local.sMJob.Set(v.DataTable.GenFlxDT(v.Local.iCount).Job!FieldValTrim)
+		        V.Local.sMSuffix.Set(v.DataTable.GenFlxDT(v.Local.iCount).Suffix!FieldValTrim)
+	        	'Add increment
+		        F.Intrinsic.Math.Add(V.Local.iIncrement,1,V.Local.iIncrement)
+		        F.Intrinsic.String.Format(V.Local.iIncrement,"000000",V.Local.sIncrement)
+		
+	
+		        V.Local.sMJob.Set(v.DataTable.GenFlxDT(v.Local.iCount).Job!FieldValTrim)
+		        V.Local.sMSuffix.Set(v.DataTable.GenFlxDT(v.Local.iCount).Suffix!FieldValTrim)
+		        V.Local.sSeq.Set(v.DataTable.GenFlxDT(v.Local.iCount).Seq!FieldValTrim)
+		        
+
+		        
+		       
+		       V.Local.sMSeq.Set(v.DataTable.RMFLTDT(v.Local.iCount1).Seq!FieldValTrim)
+		       V.Local.sPart.Set(v.DataTable.RMFLTDT(v.Local.iCount1).RM!FieldValTrim)
+
+				V.Local.sWorkCenter.Set(v.DataTable.GenFlxDT(v.Local.iCount).part!FieldValTrim)
+		
+		
+		
+		        V.Local.sFiller.Set("000000999999")
+		        V.Local.sFiller2.Set("000000999999")
+		        'padd all of the paramaters to fit into the file
+		       
+		        F.Intrinsic.String.RPad(V.Local.sScheduleNumber," ",9,V.Local.sScheduleNumber)
+		        
+		        F.Intrinsic.String.RPad(V.Local.sIncrement," ",6,V.Local.sIncrement)
+		        F.Intrinsic.String.RPad(V.Local.sMJob," ",6,V.Local.sMJob)
+		        F.Intrinsic.String.RPad(V.Local.sMSuffix," ",3,V.Local.sMSuffix)
+		        F.Intrinsic.String.RPad(V.Local.sMSeq," ",11,V.Local.sMSeq)
+		        
+		        F.Intrinsic.String.RPad(V.Local.sJob," ",6,V.Local.sJob)
+		        F.Intrinsic.String.RPad(V.Local.sSuffix," ",3,V.Local.sSuffix)
+		        F.Intrinsic.String.RPad(V.Local.sSeq," ",6,V.Local.sSeq)
+		        F.Intrinsic.String.RPad(V.Local.sFiller," ",37,V.Local.sFiller)
+		        F.Intrinsic.String.RPad(V.Local.sWorkCenter," ",4,V.Local.sWorkCenter)
+		        F.Intrinsic.String.RPad(V.Local.sPart," ",25,V.Local.sPart)
+		        F.Intrinsic.String.RPad(V.Local.sFiller2," ",12,V.Local.sFiller2)
+		        F.Intrinsic.String.Build("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}",V.Local.sLine,V.Local.sScheduleNumber,V.Local.sIncrement,V.Local.sMJob,V.Local.sMSuffix,V.Local.sMSeq,V.Local.sJob,V.Local.sSuffix,V.Local.sSeq,V.Local.sFiller,V.Local.sWorkCenter,V.Local.sPart,V.Local.sFiller2,V.Ambient.NewLine,V.Local.sLine)
+			f.Intrinsic.Control.Next(v.Local.iCount1)
+		F.Intrinsic.Control.EndIf
+		f.Data.DataTable.Close("RMFLTDT")
+    F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Next(V.Local.iCount)
+'SCHED.txt that is read by UPLSCHED
+F.Intrinsic.String.Build("{0}\SCHED.TXT",V.Caller.FilesDir,V.Local.sFileName)
+f.Intrinsic.String.Replace(v.Local.sLine,v.Ambient.NewLine," ",v.Local.sLineCheck)
+f.Intrinsic.control.If(v.Local.sLineCheck.Trim,<>,"")
+	f.Intrinsic.Control.If(v.Global.sFlexGen,=,"")
+		f.intrinsic.String.Build("{0}",V.Local.sScheduleNumber,v.Global.sFlexGen)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.concat(v.Global.sFlexGen,"*!*",V.Local.sScheduleNumber,v.Global.sFlexGen)
+	f.Intrinsic.Control.EndIf
+	F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sLine)
+	F.Global.General.CallWrapperSync(6000,"NS!*!50")
+f.Intrinsic.Control.EndIf
+
+f.Data.DataTable.Close("RMLPDT")
+f.Data.DataTable.Close("GenFlxDT")
+'uploads schedule in append and screenless mode
+
+Program.Sub.FlexForWC.End
+
+Program.Sub.FlexForWG.Start
+v.Local.sSQL.Declare(String)
+v.Local.sSelJobs.Declare(String)
+v.Local.sRM.Declare(String)
+v.Local.iCount.Declare(Long)
+v.Local.iCount1.Declare(Long)
+V.Local.iIncrement.Declare(Long)
+V.Local.sIncrement.Declare(String)
+V.Local.sScheduleNumber.Declare(String)
+V.Local.sMJob.Declare(String)
+V.Local.sMSuffix.Declare(String)
+V.Local.sMSeq.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sFiller.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.sFilter1.Declare(String)
+V.Local.sWorkCenter.Declare(String)
+V.Local.sPart.Declare(String)
+V.Local.sFiller2.Declare(String)
+V.Local.sLine.Declare
+v.Local.sLineCheck.Declare
+V.Local.sFileName.Declare(String)
+' this sub is same as before with the exception of us populating the actual work center in the schedule. this work center is pulled from the APS table
+
+f.Intrinsic.String.Build("Select JOB,Suffix,Seq from v_job_operations where job + suffix in ({0}) and job + suffix + seq not in (select distinct job + suffix + labor_seq as JSS from V_JOB_CT_FLX_SCHD where flag_closed <> 'Y' ) and LMO = 'L' and flag_closed <> 'Y' and part = '{1}' order by job,suffix,seq ",v.Global.sSelJobs,V.Global.sWC,v.Local.sSQL)
+f.Data.DataTable.CreateFromSQL("GenFlxDT","conx",v.Local.sSQL)
+
+f.Intrinsic.String.Build("SelectRM = 1 and WC = '{0}'",v.Global.sWC,v.Local.sFilter)
+'f.Intrinsic.String.Build("WC = '{0}'",v.Global.sWC,v.Local.sFilter)
+f.Data.DataView.Create("WCDT$RMDT","Rem2WCVW",22,v.Local.sFilter,"")
+f.Data.dataview.ToString("WCDT$RMDT","Rem2WCVW","RM","","','",v.Local.sRM)
+f.Intrinsic.String.Concat("'",v.Local.sRM,"'",v.Local.sRM)
+f.Data.DataView.Close("WCDT$RMDT","Rem2WCVW")
+
+f.Intrinsic.String.Build("Select JOB,Suffix,Seq,part as RM from v_job_operations where job + suffix in ({0}) and LMO = 'M' and flag_closed <> 'Y' and part in ({1}) and seq < '995000' order by job,suffix,seq ",v.Global.sSelJobs,v.Local.sRM,v.Local.sSQL)
+f.Data.DataTable.CreateFromSQL("RMLPDT","conx",v.Local.sSQL)
+
+f.Intrinsic.Control.If(v.DataTable.GenFlxDT.RowCount,=,0)
+	f.Intrinsic.Control.ExitSub
+
+f.Intrinsic.Control.EndIf
+
+f.ODBC.Connection!conx.GetID("V_JOB_CT_FLX_SCHD","SCHEDULE",TRUE,V.Local.sScheduleNumber)
+F.Intrinsic.String.Format(V.Local.sScheduleNumber,"000000",V.Local.sScheduleNumber)
+
+f.Intrinsic.Control.If(v.Global.sFlexGen,=,"")
+	f.intrinsic.String.Build("{0}",V.Local.sScheduleNumber,v.Global.sFlexGen)
+f.Intrinsic.Control.Else
+	f.Intrinsic.String.concat(v.Global.sFlexGen,"*!*",V.Local.sScheduleNumber,v.Global.sFlexGen)
+f.Intrinsic.Control.EndIf
+
+	
+F.Intrinsic.Control.For(V.Local.iCount,0,v.DataTable.GenFlxDT.RowCount--,1)
+    F.Intrinsic.Control.If(v.DataTable.GenFlxDT(v.Local.iCount).Job!FieldValTrim,<>,"")
+    	V.Local.sJob.Set(v.DataTable.GenFlxDT(v.Local.iCount).Job!FieldValTrim)
+	    V.Local.sSuffix.Set(v.DataTable.GenFlxDT(v.Local.iCount).Suffix!FieldValTrim)
+        F.Intrinsic.String.RPad(V.Local.sJob," ",6,V.Local.sJob)
+		F.Intrinsic.String.RPad(V.Local.sSuffix," ",3,V.Local.sSuffix)
+       
+        f.Intrinsic.String.Build("JOB = '{0}' and SUFFIX = '{1}'",V.Local.sJob,v.Local.sSuffix,v.Local.sFilter1)
+        f.Data.DataView.Create("RMLPDT","RetRMSeqVw",22,v.Local.sFilter1,"")
+		f.Intrinsic.Control.If(v.DataView.RMLPDT!RetRMSeqVw.RowCount,=,0)
+			f.Data.DataView.Close("RMLPDT","RetRMSeqVw")
+			f.Intrinsic.String.Build("JOB = '{0}' and SUFFIX = '{1}'",V.Local.sJob.trim,v.Local.sSuffix.trim,v.Local.sFilter1)
+		f.Data.DataView.Create("RMLPDT","RetRMSeqVw",22,v.Local.sFilter1,"")
+		f.Intrinsic.Control.EndIf
+		f.Data.DataView.ToDataTable("RMLPDT","RetRMSeqVw","RMFLTDT")
+        f.Data.DataView.close("RMLPDT","RetRMSeqVw")
+        
+        
+        
+        f.Intrinsic.Control.If(v.DataTable.RMFLTDT.RowCount,=,0)
+		'Add increment
+	        F.Intrinsic.Math.Add(V.Local.iIncrement,1,V.Local.iIncrement)
+	        F.Intrinsic.String.Format(V.Local.iIncrement,"000000",V.Local.sIncrement)
+			V.Local.sMJob.Set(V.Local.sJob)
+		    V.Local.sMSuffix.Set(V.Local.sSuffix)
+		    V.Local.sSeq.Set(v.DataTable.GenFlxDT(v.Local.iCount).Seq!FieldValTrim)
+		    V.Local.sMSeq.Set("")
+		    V.Local.sPart.Set("")
+		    F.Intrinsic.String.Build("SELECT TOP 1 SEQ, PART FROM V_JOB_OPERATIONS WHERE JOB = '{0}' AND SUFFIX = '{1}' AND SEQ < '{2}' and LMO = 'M' ORDER BY SEQ ASC",V.Local.sJob,V.Local.sSuffix,V.Local.sSeq,V.Local.sSQL)
+		    F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sMSeq)
+	        F.Intrinsic.String.Replace(V.Local.sMSeq,"*!*","",V.Local.sMSeq)
+	        F.Intrinsic.String.Split(V.Local.sMSeq,"*!*",V.Local.sMSeq)
+	        V.Local.sMSeq.RedimPreserve(0,1)
+	        V.Local.sPart.Set(V.Local.sMSeq(1))
+	        V.Local.sMSeq.RedimPreserve(0,0)
+	        'this is wher we are getting the work center.
+	        F.Intrinsic.String.Build("SELECT TOP 1 SAR AS WC FROM APSV3_UBDETAIL WHERE JOB = '{0}' AND SFX = '{1}' AND SEQ = '{2}'",V.Local.sJob.Trim,V.Local.sSuffix.Trim,V.Local.sSeq.Trim,V.Local.sSQL)
+	        F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sWorkCenter)
+	
+		    V.Local.sFiller.Set("000000999999")
+		    V.Local.sFiller2.Set("000000999999")
+		    'padd all of the paramaters to fit into the file
+		       
+	        F.Intrinsic.String.RPad(V.Local.sScheduleNumber," ",9,V.Local.sScheduleNumber)
+	        
+	        F.Intrinsic.String.RPad(V.Local.sIncrement," ",6,V.Local.sIncrement)
+	        F.Intrinsic.String.RPad(V.Local.sMJob," ",6,V.Local.sMJob)
+	        F.Intrinsic.String.RPad(V.Local.sMSuffix," ",3,V.Local.sMSuffix)
+	        F.Intrinsic.String.RPad(V.Local.sMSeq," ",11,V.Local.sMSeq)
+	        
+	        F.Intrinsic.String.RPad(V.Local.sJob," ",6,V.Local.sJob)
+	        F.Intrinsic.String.RPad(V.Local.sSuffix," ",3,V.Local.sSuffix)
+	        F.Intrinsic.String.RPad(V.Local.sSeq," ",6,V.Local.sSeq)
+	        F.Intrinsic.String.RPad(V.Local.sFiller," ",37,V.Local.sFiller)
+	        F.Intrinsic.String.RPad(V.Local.sWorkCenter," ",4,V.Local.sWorkCenter)
+	        F.Intrinsic.String.RPad(V.Local.sPart," ",25,V.Local.sPart)
+	        F.Intrinsic.String.RPad(V.Local.sFiller2," ",12,V.Local.sFiller2)
+	        F.Intrinsic.String.Build("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}",V.Local.sLine,V.Local.sScheduleNumber,V.Local.sIncrement,V.Local.sMJob,V.Local.sMSuffix,V.Local.sMSeq,V.Local.sJob,V.Local.sSuffix,V.Local.sSeq,V.Local.sFiller,V.Local.sWorkCenter,V.Local.sPart,V.Local.sFiller2,V.Ambient.NewLine,V.Local.sLine)
+			
+		f.Intrinsic.Control.Else
+	    	f.Intrinsic.Control.For(v.Local.iCount1,0,v.DataTable.RMFLTDT.RowCount--,1)
+	    	
+	    	
+		        'Add increment
+		        F.Intrinsic.Math.Add(V.Local.iIncrement,1,V.Local.iIncrement)
+		        F.Intrinsic.String.Format(V.Local.iIncrement,"000000",V.Local.sIncrement)
+		
+		        V.Local.sMJob.Set(v.DataTable.GenFlxDT(v.Local.iCount).Job!FieldValTrim)
+		        V.Local.sMSuffix.Set(v.DataTable.GenFlxDT(v.Local.iCount).Suffix!FieldValTrim)
+		        V.Local.sSeq.Set(v.DataTable.GenFlxDT(v.Local.iCount).Seq!FieldValTrim)
+		        F.Intrinsic.String.RPad(V.Local.sMJob," ",6,V.Local.sMJob)
+		        F.Intrinsic.String.RPad(V.Local.sMSuffix," ",3,V.Local.sMSuffix)
+		
+
+					
+				V.Local.sMSeq.Set(v.DataTable.RMFLTDT(v.Local.iCount1).Seq!FieldValTrim)
+	      		V.Local.sPart.Set(v.DataTable.RMFLTDT(v.Local.iCount1).RM!FieldValTrim)
+					
+		        'search for the work center, part and sequence
+		        F.Intrinsic.String.Build("SELECT SAR AS WC FROM APSV3_UBDETAIL WHERE JOB = '{0}' AND SFX = '{1}' AND SEQ = '{2}'",V.Local.sJob.Trim,V.Local.sSuffix.Trim,V.Local.sSeq.Trim,V.Local.sSQL)
+		        F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sWorkCenter)
+		
+		        V.Local.sFiller.Set("000000999999")
+		        V.Local.sFiller2.Set("000000999999")
+		        'padd all of the paramaters to fit into the file
+		        F.Intrinsic.String.RPad(V.Local.sScheduleNumber," ",9,V.Local.sScheduleNumber)
+		        F.Intrinsic.String.RPad(V.Local.sIncrement," ",6,V.Local.sIncrement)
+
+		        F.Intrinsic.String.RPad(V.Local.sMSeq," ",11,V.Local.sMSeq)
+		        
+		        F.Intrinsic.String.RPad(V.Local.sJob," ",6,V.Local.sJob)
+		        F.Intrinsic.String.RPad(V.Local.sSuffix," ",3,V.Local.sSuffix)
+		        F.Intrinsic.String.RPad(V.Local.sSeq," ",6,V.Local.sSeq)
+		        F.Intrinsic.String.RPad(V.Local.sFiller," ",37,V.Local.sFiller)
+		        F.Intrinsic.String.RPad(V.Local.sWorkCenter," ",4,V.Local.sWorkCenter)
+		        F.Intrinsic.String.RPad(V.Local.sPart," ",25,V.Local.sPart)
+		        F.Intrinsic.String.RPad(V.Local.sFiller2," ",12,V.Local.sFiller2)
+		        
+		        F.Intrinsic.String.Build("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}",V.Local.sLine,V.Local.sScheduleNumber,V.Local.sIncrement,V.Local.sMJob,V.Local.sMSuffix,V.Local.sMSeq,V.Local.sJob,V.Local.sSuffix,V.Local.sSeq,V.Local.sFiller,V.Local.sWorkCenter,V.Local.sPart,V.Local.sFiller2,V.Ambient.NewLine,V.Local.sLine)
+				
+			f.Intrinsic.Control.Next(v.Local.iCount1)
+		F.Intrinsic.Control.EndIf
+		f.Data.DataTable.Close("RMFLTDT")
+    F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+'SCHED.txt that is read by UPLSCHED
+F.Intrinsic.String.Build("{0}\SCHED.TXT",V.Caller.FilesDir,V.Local.sFileName)
+
+f.Intrinsic.String.Replace(v.Local.sLine,v.Ambient.NewLine," ",v.Local.sLineCheck)
+f.Intrinsic.control.If(v.Local.sLineCheck.Trim,<>,"")
+	f.Intrinsic.Control.If(v.Global.sFlexGen,=,"")
+		f.intrinsic.String.Build("{0}",V.Local.sScheduleNumber,v.Global.sFlexGen)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.concat(v.Global.sFlexGen,"*!*",V.Local.sScheduleNumber,v.Global.sFlexGen)
+	f.Intrinsic.Control.EndIf
+	F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sLine)
+	F.Global.General.CallWrapperSync(6000,"NS!*!50")
+f.Intrinsic.Control.EndIf
+
+
+f.Data.DataTable.Close("RMLPDT")
+f.Data.DataTable.Close("GenFlxDT")
+'uploads schedule in append and screenless mode
+
+
+Program.Sub.FlexForWG.End
+
+Program.Sub.MatOptLoad.Start
+v.Local.sSql.Declare
+v.Local.bExists.Declare
+v.Local.sDate.Declare
+v.Local.sTime.Declare
+v.Local.sFileName.Declare
+v.Local.sRet.Declare
+v.Local.iCount.Declare
+'this is the sub for loading the  material optimizer/issue material screen. the data that is populated depends on how it is launched. when running from the generate flex schedule process, it will only load schedules created during that session else it loads all schedules.
+gui.FMatOpt.cmdPrintBCWO.Visible(False)
+f.Intrinsic.file.Exists(v.Global.sChkPath,v.Local.bExists)
+f.Intrinsic.Control.If(v.Local.bExists)
+	gui.FMatOpt.chhSave2JobOps.Value(1)
+f.Intrinsic.Control.Else
+	gui.FMatOpt.chhSave2JobOps.Value(0)
+f.Intrinsic.Control.EndIf
+v.Global.bEdit.Set(False)
+f.Intrinsic.Control.If(v.Caller.Switches,=,"O")
+	'loading all schedules
+	f.Data.DataTable.CreateFromSQL("PopDT","conx","select distinct Schedule,RTRIM(' ') as WC from V_JOB_CT_FLX_SCHD WHERE RTRIM(FLAG_CLOSED) = '' OR RTRIM(FLAG_CLOSED) = 'N' order by Schedule desc",true)
+	f.Data.DataTable.AddColumn("popDT","Desc","String")
+	'the following is being done so the WC's that show up in the query are replaced by its group for purposes of easy visual understanding.
+	f.Data.Dictionary.CreateFromSQL("WCSchedDict","conx","select distinct schedule,RTRIM(LABOR_WC) as LABOR_WC from V_JOB_CT_FLX_SCHD WHERE RTRIM(FLAG_CLOSED) = '' OR RTRIM(FLAG_CLOSED) = 'N' ")
+	f.Data.Dictionary.SetDefaultReturn("WCSchedDict","")	
+	f.Data.DataTable.FillFromDictionary("PopDT","WCSchedDict","Schedule","WC")
+	f.Data.Dictionary.Close("WCSchedDict")
+	
+	
+	f.Data.Dictionary.CreateFromSQL("WCWGDict","conx","select distinct RTRIM(workcenter) as WC,workgroup from V_WORKGROUP_LINE")
+	f.Data.DataTable.FillFromDictionary("PopDT","WCWGDict","WC")
+	f.Data.Dictionary.Close("WCWGDict")
+	f.Data.Datatable.CreateFromSQL("WCDescDT","conx","Select RTRIM(Machine) as WC,WC_NAME as Descr from WORKCENTERS")
+	f.Data.Datatable.CreateFromSQL("WGDescDT","conx","select RTRIM(Work_group) as WC,Descr as Descr from WORKGROUP_HEAD")
+	f.Data.DataTable.Merge("WGDescDT","WCDescDT",true,2)
+	f.Data.DataTable.Close("WGDescDT")
+	
+	f.Data.Dictionary.CreateFromDatatable("WCDescDict","WCDescDT","WC","Descr")
+	f.Data.DataTable.Close("WCDescDT")
+	f.Data.DataTable.FillFromDictionary("PopDT","WCDescDict","WC","Desc")
+	f.Data.Dictionary.Close("WCDescDict")
+
+	
+
+f.Intrinsic.Control.Else
+	'loads just the created schedules. the global variable below is populated with the schedules as they are created.
+	f.Intrinsic.String.Replace(v.Global.sFlexGen," ","",v.Global.sFlexGen)
+	f.Data.DataTable.CreateFromString("popTempDT",v.Global.sFlexGen,"schedule","string","@!@","*!*",true)
+	f.Data.Dataview.Create("popTempDT","PopTempVw",22)
+	f.Data.DataView.ToDatatableDistinct("PopTempDT","PopTempVw","PopDT","schedule",true)
+	f.Data.DataView.ToDatatableDistinct("PopTempDT","PopTempVw","ExpDT","schedule")
+	f.Data.Dataview.Close("popTempDT","PopTempVw")
+	f.Data.Datatable.Close("popTempDT")
+	f.Intrinsic.String.Format(v.Ambient.Now,"HhNn",v.Local.sTime)
+	f.Intrinsic.String.Format(v.Ambient.Date,"yyyymmdd",v.Local.sDate)
+	''for the purposes of integrating a custom script of the customer. creating a file with the schedule data so they can use it in their custom script which launches when printing barcode WOs
+	f.Data.DataTable.AddColumn("ExpDT","USERID","String")
+	f.Data.DataTable.AddColumn("ExpDT","DATECREATE","String")
+	f.Data.DataTable.SetValue("ExpDT",-1,"USERID",v.Caller.User,"DATECREATE",v.Ambient.Date.PervasiveDate)
+	f.Data.DataView.Create("ExpDT","ExpVw",22)
+	f.Data.DataView.ToString("ExpDT","ExpVw","SCHEDULE*!*USERID*!*DATECREATE","*!*",v.Ambient.NewLine,v.Local.sRet)
+	f.Intrinsic.String.Build("{0}\{1}_{2}_{3}.txt",v.Caller.TempDir,v.Caller.User.trim,v.Local.sDate.trim,"FCS",v.Local.sFileName)
+	f.Intrinsic.File.String2File(v.Local.sFileName,v.Local.sRet)
+	v.global.sFileName.Set(v.Local.sFileName)
+	f.Data.DataView.Close("ExpDT","ExpVw")
+	f.Data.DataTable.Close("ExpDT")
+	'now we are back to the routine.
+	
+	
+	
+	f.Data.Dictionary.CreateFromSQL("WCFLXDict","conx","select distinct schedule,RTRIM(LABOR_WC) as LABOR_WC from V_JOB_CT_FLX_SCHD WHERE RTRIM(FLAG_CLOSED) = '' OR RTRIM(FLAG_CLOSED) = 'N' ")
+	f.Data.Dictionary.SetDefaultReturn("WCFLXDict","")
+	f.Data.DataTable.AddColumn("popDT","WC","String")
+	f.Data.DataTable.AddColumn("popDT","Desc","String")
+	f.Data.DataTable.FillFromDictionary("PopDT","WCFLXDict","schedule","WC")
+	f.Data.Dictionary.Close("WCFLXDict")
+	f.Data.Dictionary.CreateFromSQL("WCWGDict","conx","select distinct RTRIM(workcenter) as WC,workgroup from V_WORKGROUP_LINE")
+	f.Data.DataTable.FillFromDictionary("PopDT","WCWGDict","WC")
+	f.Data.Dictionary.Close("WCWGDict")
+	f.Data.Datatable.CreateFromSQL("WCDescDT","conx","Select RTRIM(Machine) as WC,WC_NAME as Descr from WORKCENTERS")
+	f.Data.Datatable.CreateFromSQL("WGDescDT","conx","select RTRIM(Work_group) as WC,Descr as Descr from WORKGROUP_HEAD")
+	f.Data.DataTable.Merge("WGDescDT","WCDescDT",true,2)
+	f.Data.DataTable.Close("WGDescDT")
+	
+	f.Data.Dictionary.CreateFromDatatable("WCDescDict","WCDescDT","WC","Descr")
+	f.Data.DataTable.Close("WCDescDT")
+	f.Data.DataTable.FillFromDictionary("PopDT","WCDescDict","WC","Desc")
+	f.Data.Dictionary.Close("WCDescDict")
+
+f.Intrinsic.Control.EndIf
+f.Data.DataView.Create("PopDT","PopDTVw",22)
+
+gui.FMatOpt.GsGCFlxSchd.AddGridviewFromDataview("PopGrid","PopDT","PopDTVw")
+
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","schedule","headerforecolor", v.Color.PRI-GSS-00)
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","schedule","headerfontbold", True)
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","schedule","caption","Schedule No.")
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","schedule","readonly", True)
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","schedule","allowedit", False)
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","schedule","MinWidth", 80)
+
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","WC","headerforecolor", v.Color.PRI-GSS-00)
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","WC","headerfontbold", True)
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","WC","caption","Work Center")
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","WC","readonly", True)
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","WC","allowedit", False)
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","WC","MinWidth", 80)
+
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","Desc","headerforecolor", v.Color.PRI-GSS-00)
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","Desc","headerfontbold", True)
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","Desc","caption","Description")
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","Desc","readonly", True)
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","Desc","allowedit", False)
+gui.FMatOpt.GsGCFlxSchd.SetColumnProperty("PopGrid","Desc","MinWidth", 120)
+
+gui.FMatOpt.GsGCFlxSchd.SetGridviewProperty("PopGrid","Enableappearanceoddrow",True)
+gui.FMatOpt.GsGCFlxSchd.SetGridviewProperty("PopGrid","OptionsFindAlwaysVisible",True)
+gui.FMatOpt.GsGCFlxSchd.SetGridviewProperty("PopGrid","Showgrouppanel",False)
+
+gui.FMatOpt.GsGCFlxSchd.SetGridviewProperty("PopGrid","OptionsViewShowAutoFilterRow",False)
+gui.FMatOpt.GsGCFlxSchd.MainView("PopGrid")
+
+gui.FMatOpt.txtFlxSchd.Text("")
+gui.FMatOpt..Show
+
+
+Program.Sub.MatOptLoad.End
+
+Program.Sub.cmdPopGrid_Click.Start
+v.Local.sSql.Declare(String)
+v.Local.sListSel.Declare(String)
+v.Local.sTemp.Declare(String)
+v.Local.bcheck.Declare(boolean)
+v.Local.bExceed.Declare(boolean)
+v.Local.sFilter.Declare(String)
+v.Local.sRM.Declare(String)
+v.Local.sWC.Declare(String)
+v.Local.sWG.Declare(String)
+v.Local.iCount.Declare(Long)
+v.Local.iIndex.Declare(Long)
+v.Local.iCount2.Declare(Long)
+v.Local.fIssue.Declare(Float)
+v.Local.fHold.Declare(Float)
+v.Local.fOptMult.Declare(Float)
+v.Local.fOptVal.Declare(Float)
+v.Local.fCheck.Declare(Float)
+v.Local.fDiffOpt.Declare(Float)
+v.Local.fOptValRun.Declare(Float)
+v.Local.fOptValDollar.Declare(Float)
+v.Global.bEdit.Set(False)
+'this populates the grid based on what flex schedule they select.
+f.Intrinsic.Control.If(v.datatable.RawMatHd$RawMatLn.Exists,=,true)
+	F.Data.DataVIEW.Close("RawMatHd$RawMatLn", "RawMatLn_view")
+	F.Data.DataTable.Close("RawMatHd$RawMatLn")
+f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.If(v.datatable.RawMatHd.Exists,=,true)
+	F.Data.DataVIEW.Close("RawMatHd", "RawMatHd_view")
+	F.Data.DataTable.Close("RawMatHd")
+f.Intrinsic.Control.EndIf
+v.Local.sListSel.Set(v.Args.Schedule)
+f.Intrinsic.Control.If(v.Local.sListSel,=,"")
+	f.Intrinsic.UI.Msgbox("You need to select a Flex Schedule to populate the grid.")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Intrinsic.String.Left(v.Local.sListSel,6,v.Local.sListSel)
+gui.FMatOpt..Enabled(false)
+gui.FMatOpt.txtFlxSchd.Text(v.Local.sListSel)
+gui.FMatOpt.GsGcMatOpt.SuspendLayout
+
+f.Data.Dictionary.CreateFromSQL("PartDescDict","conx","Select Part,Description from v_inventory_mstr")
+f.Data.Dictionary.SetDefaultReturn("PartDescDict","")
+
+'we create a parent table with the raw mat and the child tables of all jobs for the raw mat (related to the schedule)
+f.Intrinsic.string.Build("select part,RTRIM(' ') as Descr, sum(Hours_estimated) as Est_Req_Qty,sum(Hours_Actual) as Issued_Qty, sum(Hours_estimated) - sum(Hours_Actual) as Diff_issue,CAST(0 as double) as OPT_ISSUE_QTY,CAST(0 as double) as DIFF_OPT_QTY,CAST(0 as double) as ACT_ISSUE_QTY,RTRIM(' ') as ISSUE,RTRIM(' ') as SAVE, Cast(0 as Bit) as CLose_seq,RTRIM(' ') as SAVE_SEQ  from V_JOB_OPERATIONS where LMO = 'M' and suffix < '995000'  and JOB + SUFFIX + SEQ in (select distinct concat(matl_job,concat(matl_suffix,matl_seq)) as jss from V_JOB_CT_FLX_SCHD WHERE Schedule = '{0}') group by part ",v.Local.sListSel,v.local.sSql)
+f.Data.DataTable.CreateFromSQL("RawMatHd","conx",v.Local.sSql,true)
+f.Data.DataTable.FillFromDictionary("RawMatHd","PartDescDict","part","Descr")
+F.Data.DataView.Create("RawMatHd", "RawMatHd_view", 22)
+f.Intrinsic.string.Build("select Job,suffix,seq,Cast(1 as Bit) as Sel_Seq,job + '-' + Suffix + '-' + seq as jss,  part,RTRIM(' ') as Descr, Hours_estimated as Est_Req_Qty,Hours_Actual as Issued_Qty,Hours_estimated - Hours_Actual as Diff_issue,CAST(0 as double) as OPT_ISSUE_QTY,CAST(0 as double) as ACT_ISSUE_QTY,CAST(0 as double) as REV_ISSUE_QTY,CAST( CASE WHEN Flag_Closed = 'Y' THEN 1 ELSE 0 END AS bit)  as Flag_Closed,units,dollars_estimated from V_JOB_OPERATIONS where LMO = 'M' and SEQ < '995000' and JOB + SUFFIX + SEQ in (select distinct concat(matl_job,concat(matl_suffix,matl_seq)) as jss from V_JOB_CT_FLX_SCHD WHERE Schedule = '{0}') ",v.Local.sListSel,v.local.sSql)
+F.Data.DataTable.CreateFromSQL("RawMatHd$RawMatLn", "conx", v.Local.sSql, true)
+f.Data.DataTable.FillFromDictionary("RawMatHd$RawMatLn","PartDescDict","part","Descr")
+F.Data.DataView.Create("RawMatHd$RawMatLn", "RawMatLn_view", 22)
+f.Data.Dictionary.Close("PartDescDict")
+f.Intrinsic.string.Build("Select Part,ISSUE_AMT from GCG_4720_IssueData where schedule = '{0}'",v.Local.sListSel,v.Local.sSql)
+f.Data.Dictionary.CreateFromSQL("IssueDict","conx",v.Local.sSql)
+f.Data.Dictionary.SetDefaultReturn("IssueDict",0)
+f.Data.DataTable.FillFromDictionary("RawMatHd","IssueDict","Part","OPT_ISSUE_QTY")
+f.Data.Dictionary.Close("IssueDict")
+f.Intrinsic.string.Build("Select Part,Flag_Closed from GCG_4720_IssueData where schedule = '{0}'",v.Local.sListSel,v.Local.sSql)
+f.Data.Dictionary.CreateFromSQL("CLoseDict","conx",v.Local.sSql)
+f.Data.Dictionary.SetDefaultReturn("CLoseDict",False)
+f.Data.DataTable.FillFromDictionary("RawMatHd","CLoseDict","Part","CLose_seq")
+f.Data.Dictionary.Close("CLoseDict")
+
+
+'this is in case a optimised quantity was saved for a raw mat in the schedule it will calculate and populate the optimized quantities based on the respective ratios.
+f.Intrinsic.Control.For(v.Local.iCount,0,v.DataTable.RawMatHd.RowCount--,1)
+	v.Local.fIssue.Set(v.DataTable.RawMatHd(v.Local.icount).OPT_ISSUE_QTY!FieldValFloat)
+	f.Intrinsic.Control.If(v.Local.fIssue,>,0)
+		v.Local.sRM.Set(v.DataTable.RawMatHd(v.Local.icount).Part!FieldVal)
+		f.Intrinsic.Math.Sub(v.DataTable.RawMatHd(v.Local.icount).OPT_ISSUE_QTY!FieldValFloat,v.DataTable.RawMatHd(v.Local.icount).Issued_Qty!FieldValFloat,v.Local.fDiffOpt)
+		f.Data.DataTable.SetValue("RawMatHd",v.local.iCount,"DIFF_OPT_QTY",v.Local.fDiffOpt)
+		f.Intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+		F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+		
+		f.Intrinsic.Control.If(v.DataView.RawMatHd$RawMatLn!TempView.RowCount,>,0)
+'			f.Intrinsic.Math.Add(v.DataTable.RawMatHd(v.Local.icount).Diff_issue!FieldValFloat,v.DataTable.RawMatHd(v.Local.icount).OPT_ISSUE_QTY!FieldValFloat,v.Local.fHold)
+			f.Intrinsic.Math.sub(v.DataTable.RawMatHd(v.Local.icount).Est_Req_Qty!FieldValFloat,v.DataTable.RawMatHd(v.Local.icount).OPT_ISSUE_QTY!FieldValFloat,v.Local.fHold)
+			f.Intrinsic.Math.div(v.Local.fHold,v.DataTable.RawMatHd(v.Local.icount).Est_Req_Qty!FieldValFloat,v.Local.fHold)
+			f.Intrinsic.Math.sub(1,v.Local.fHold,v.Local.fOptMult)
+			f.Intrinsic.Control.For(v.Local.iCount2,0,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--,1)
+				
+				v.Local.iIndex.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).DataTableIndex)
+				
+				f.Intrinsic.Math.mult(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.icount2).units!FieldValFloat,v.Local.fOptMult,v.Local.fOptValRun)
+				f.intrinsic.Math.Round(v.Local.fOptValRun,4,v.Local.fOptValRun)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"UNITS",v.Local.fOptValRun)
+				f.Intrinsic.Math.mult(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.icount2).dollars_estimated!FieldValFloat,v.Local.fOptMult,v.Local.fOptValDollar)
+				f.intrinsic.Math.Round(v.Local.fOptValDollar,2,v.Local.fOptValDollar)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"Dollars_Estimated",v.Local.fOptValDollar)
+				f.Intrinsic.Math.mult(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).Est_Req_Qty!fieldvalFloat,v.Local.fOptMult,v.Local.fOptVal)		
+				f.intrinsic.Math.Round(v.Local.fOptVal,4,v.Local.fOptVal)
+				v.Local.sTemp.set(v.Local.fOptVal)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"OPT_ISSUE_QTY",v.Local.fOptVal)
+				'this check is to round the value on the last line so there are no decimals when the total values are calculated.
+				f.Intrinsic.Control.If(v.Local.iCount2,=,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--)
+					F.Data.DataView.ToDataTable("RawMatHd","TempView","TempDT")
+					f.Data.DataTable.Compute("TempDT","Sum(OPT_ISSUE_QTY)","",v.Local.fCheck)
+					f.Data.DataTable.Close("TempDT")
+					f.Intrinsic.Math.Sub(v.Local.fIssue,v.Local.fCheck,v.Local.fCheck)
+					f.Intrinsic.Control.If(v.Local.fCheck,>,0)
+						f.Intrinsic.Math.Add(v.DataTable.RawMatHd$RawMatLn(v.Local.iIndex).OPT_ISSUE_QTY.fieldvalfloat,v.Local.fCheck,v.Local.fOptVal)
+						f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"OPT_ISSUE_QTY",v.Local.fOptVal)
+					f.Intrinsic.Control.ElseIf(v.Local.fCheck,<,0)
+						f.Intrinsic.Math.Sub(v.DataTable.RawMatHd$RawMatLn(v.Local.iIndex).OPT_ISSUE_QTY.fieldvalfloat,v.Local.fCheck,v.Local.fOptVal)
+						f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"OPT_ISSUE_QTY",v.Local.fOptVal)
+					f.Intrinsic.Control.EndIf					
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.Next(v.Local.iCount2)
+		f.Intrinsic.Control.EndIf	
+		f.Data.DataView.Close("RawMatHd$RawMatLn", "TempView")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Next(v.Local.iCount)
+
+
+
+f.Data.Datatable.AddRelation("RawMatHd","part","RawMatHd$RawMatLn","part")
+
+gui.FMatOpt.GsGcMatOpt.AddGridviewFromDataview("RawMatHd_Grid", "RawMatHd", "RawMatHd_view")
+gui.FMatOpt.GsGcMatOpt.AddGridviewFromDataview("RawMatLn_Grid", "RawMatHd", "RawMatLn_view")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "part", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "part", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "part", "caption", "Raw Material")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "part", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "part", "AllowEdit", False)
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Descr", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Descr", "caption", "Description")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Descr", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Descr", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Descr", "AllowEdit", False)
+
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Est_Req_Qty", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Est_Req_Qty", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Est_Req_Qty", "caption", "Estimated Qty")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Est_Req_Qty", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Est_Req_Qty", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Est_Req_Qty", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Est_Req_Qty", "CellHAlignment ", "far")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Issued_Qty", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Issued_Qty", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Issued_Qty", "caption", "Issued Qty")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Issued_Qty", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Issued_Qty", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Issued_Qty", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Issued_Qty", "CellHAlignment ", "far")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Diff_issue", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Diff_issue", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Diff_issue", "caption", "Diff. to Estimate")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Diff_issue", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Diff_issue", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Diff_issue", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Diff_issue", "CellHAlignment ", "far")
+'Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Diff_issue", "Visible", False)
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "DIFF_OPT_QTY", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "DIFF_OPT_QTY", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "DIFF_OPT_QTY", "caption", "Diff. To Opt")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "DIFF_OPT_QTY", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "DIFF_OPT_QTY", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "DIFF_OPT_QTY", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "DIFF_OPT_QTY", "CellHAlignment ", "far")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "caption", "Opt Qty to Issue")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "ReadOnly", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "AllowEdit", True)
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "EditMaskType", "numeric")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "EditMask", "#########.0000")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "EditMaskAsDisplayFormat", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "CellHAlignment ", "far")
+
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "ACT_ISSUE_QTY", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "ACT_ISSUE_QTY", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "ACT_ISSUE_QTY", "caption", "Act Issue Qty")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "ACT_ISSUE_QTY", "ReadOnly", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "ACT_ISSUE_QTY", "AllowEdit", True)
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "ACT_ISSUE_QTY", "EditMaskType", "numeric")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "ACT_ISSUE_QTY", "EditMask", "#########.0000")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "ACT_ISSUE_QTY", "EditMaskAsDisplayFormat", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "ACT_ISSUE_QTY", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "ACT_ISSUE_QTY", "CellHAlignment ", "far")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "CLose_seq", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "CLose_seq", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "CLose_seq", "caption", "Close Sequence")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "CLose_seq", "ReadOnly", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "CLose_seq", "AllowEdit", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "CLose_seq", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "CLose_seq", "caption", "Close Sequence")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "CLose_seq", "CellHAlignment ", "far")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Issue", "headerforecolor", v.Color.PRI-GSS-00)
+gui.FMatOpt.GsGcMatOpt.ColumnEdit("RawMatHd_Grid","Issue","EditorButton","Issue Mat")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid","Issue","caption","Issue Material")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid","Issue","readonly", true)
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid","Issue","allowedit", false)
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Save", "headerforecolor", v.Color.PRI-GSS-00)
+gui.FMatOpt.GsGcMatOpt.ColumnEdit("RawMatHd_Grid","Save","EditorButton","Save")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid","Save","caption","Save Opt Issue")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid","Save","readonly", true)
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid","Save","allowedit", false)
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Save_SEQ", "headerforecolor", v.Color.PRI-GSS-00)
+gui.FMatOpt.GsGcMatOpt.ColumnEdit("RawMatHd_Grid","Save_SEQ","EditorButton","Save")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid","Save_SEQ","caption","Save Job status")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid","Save_SEQ","readonly", true)
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid","Save_SEQ","allowedit", false)
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid","Save_SEQ","Visible", True)
+'based on permissions columns are hidden. this is to differentiate between the roles of material optimizer and material handler.
+f.Intrinsic.Control.If(v.Global.bIssue,=,true)
+	gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Issue", "Visible", True)	
+	gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Save", "Visible", False)
+	gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Diff_issue", "Visible", False)
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "ReadOnly", True)
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "AllowEdit", False)
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "ACT_ISSUE_QTY", "CellBackColor", "LightGreen")
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Sel_Seq", "Visible", true)
+	gui.FMatOpt.cmdSched.Visible(False)
+	gui.FMatOpt.chhSave2JobOps.Visible(False)
+f.Intrinsic.Control.Else
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "CLose_seq", "caption", "Closed Flag")
+	gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Issue", "Visible", False)
+	gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Save_SEQ", "Visible", False)	
+	gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Save", "Visible", False)
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "CellBackColor", "LightGreen")
+	gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Issued_Qty", "Visible", False)
+	gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "Diff_issue", "Visible", False)
+	gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "DIFF_OPT_QTY", "Visible", False)
+	gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "OPT_ISSUE_QTY", "Visible", True)
+	gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "ACT_ISSUE_QTY", "Visible", False)
+	gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "CLose_seq", "Visible", True)
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "CLose_seq", "ReadOnly", True)
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "CLose_seq", "AllowEdit", False)
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Issued_Qty", "Visible", False)
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Diff_Issue", "Visible", False)
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "ACT_ISSUE_QTY", "Visible", False)
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "REV_ISSUE_QTY", "Visible", False)
+	Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Sel_Seq", "Visible", False)
+
+	gui.FMatOpt..Caption("Material Optimizer")
+	gui.FMatOpt.cmdSched.Visible(True)
+	gui.FMatOpt.chhSave2JobOps.Visible(True)
+f.Intrinsic.Control.EndIf
+
+gui.FMatOpt.cmdPrintBCWO.Visible(True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "units", "Visible", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "dollars_estimated", "Visible", False)
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Job", "Visible", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Suffix", "Visible", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Seq", "Visible", False)
+'Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatHd_Grid", "edit", "Visible",false)
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Sel_Seq", "headerforecolor", Navy)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Sel_Seq", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Sel_Seq", "caption", "Select Seq")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Sel_Seq", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Sel_Seq", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Sel_Seq", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Sel_Seq", "CellHAlignment ", "far")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "part", "headerforecolor", "Navy")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "part", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "part", "caption", "Raw Material")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "part", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "part", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "part","CellBackColor", "PapayaWhip")
+
+
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Descr", "Visible", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Descr", "headerforecolor", "Navy")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Descr", "caption", "Description")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Descr", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Descr", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Descr", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Descr","CellBackColor", "PapayaWhip")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Est_Req_Qty", "headerforecolor","Navy")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Est_Req_Qty", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Est_Req_Qty", "caption", "Estimated Req Qty")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Est_Req_Qty", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Est_Req_Qty", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Est_Req_Qty", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Est_Req_Qty", "CellHAlignment ", "far")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Issued_Qty", "headerforecolor", "Navy")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Issued_Qty", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Issued_Qty", "caption", "Issued Qty")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Issued_Qty", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Issued_Qty", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Issued_Qty", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Issued_Qty", "CellHAlignment ", "far")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Diff_Issue", "headerforecolor", "Navy")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Diff_Issue", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Diff_Issue", "caption", "Diff. to Estimate")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Diff_Issue", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Diff_Issue", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Diff_Issue", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Diff_Issue", "CellHAlignment ", "far")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "ACT_ISSUE_QTY", "headerforecolor", "Navy")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "ACT_ISSUE_QTY", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "ACT_ISSUE_QTY", "caption", "Act Issue Qty")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "ACT_ISSUE_QTY", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "ACT_ISSUE_QTY", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "ACT_ISSUE_QTY", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "ACT_ISSUE_QTY", "CellHAlignment ", "far")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "REV_ISSUE_QTY", "headerforecolor", "Navy")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "REV_ISSUE_QTY", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "REV_ISSUE_QTY", "caption", "Reverse Issue Qty")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "REV_ISSUE_QTY", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "REV_ISSUE_QTY", "AllowEdit", False)
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "REV_ISSUE_QTY", "EditMaskType", "numeric")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "REV_ISSUE_QTY", "EditMask", "#########.0000")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "REV_ISSUE_QTY", "EditMaskAsDisplayFormat", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "REV_ISSUE_QTY", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "REV_ISSUE_QTY", "CellHAlignment ", "far")
+
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "OPT_ISSUE_QTY", "headerforecolor", "Navy")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "OPT_ISSUE_QTY", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "OPT_ISSUE_QTY", "caption", "Opt Qty to Issue")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "OPT_ISSUE_QTY", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "OPT_ISSUE_QTY", "AllowEdit", False)
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "OPT_ISSUE_QTY", "EditMaskType", "numeric")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "OPT_ISSUE_QTY", "EditMask", "#########.0000")
+gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "OPT_ISSUE_QTY", "EditMaskAsDisplayFormat", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "OPT_ISSUE_QTY", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "OPT_ISSUE_QTY", "CellHAlignment ", "far")
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Flag_Closed", "headerforecolor", "Navy")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Flag_Closed", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Flag_Closed", "caption", "Closed Flag")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Flag_Closed", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Flag_Closed", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Flag_Closed", "HeaderHAlignment", "Center")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Flag_Closed", "caption", "Closed Flag")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "Flag_Closed", "CellHAlignment ", "far")
+
+
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "jss", "headerforecolor", "Navy")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "jss", "headerfontbold", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "jss", "caption", "Work Order")
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "jss", "ReadOnly", True)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "jss", "AllowEdit", False)
+Gui.FMatOpt.GsGcMatOpt.SetColumnProperty("RawMatLn_Grid", "jss","CellBackColor", "PapayaWhip")
+
+gui.FMatOpt.GsGcMatOpt.ResumeLayout
+gui.FMatOpt.GsGcMatOpt.MainView("RawMatHd_Grid")
+gui.FMatOpt..Enabled(True)
+
+Program.Sub.cmdPopGrid_Click.End
+
+Program.Sub.GsGcMatOpt_CellValueChanged.Start
+v.Local.sSql.Declare(String)
+v.Local.sListSel.Declare(String)
+v.Local.sTemp.Declare(String)
+v.Local.bcheck.Declare(boolean)
+v.Local.bExceed.Declare(boolean)
+v.Local.sFilter.Declare(String)
+v.Local.sRM.Declare(String)
+v.Local.sWC.Declare(String)
+v.Local.sWG.Declare(String)
+v.Local.iCount.Declare(Long)
+v.Local.iIndex.Declare(Long)
+v.Local.iCount2.Declare(Long)
+v.Local.fIssue.Declare(Float)
+v.Local.fHold.Declare(Float)
+v.Local.fOptMult.Declare(Float)
+v.Local.fOptVal.Declare(Float)
+v.Local.fCheck.Declare(Float)
+v.Local.fDiffOpt.Declare(Float)
+v.Local.sRevIssue.Declare(String)
+v.Local.fDiffIssue.Declare(Float)
+v.Local.fOptValRun.Declare(Float)
+v.Local.fOptValDollar.Declare(Float)
+v.Local.sSchedule.Declare
+'any changes made to opt_issue_qty or Act issue qty is handled in this sub
+
+f.Intrinsic.Control.If(v.Args.column,=,"OPT_ISSUE_QTY")
+	f.Intrinsic.Control.BlockEvents
+	
+	v.Local.fIssue.Set(v.DataTable.RawMatHd(v.Args.rowindex).OPT_ISSUE_QTY!FieldValFloat)
+	'based on the value, the quantities in the child tables are adjusted.
+	f.Intrinsic.Control.If(v.Local.fIssue,>,0)
+		v.Local.sRM.Set(v.DataTable.RawMatHd(v.Args.rowindex).Part!FieldVal)
+		f.Intrinsic.Math.Sub(v.DataTable.RawMatHd(v.Args.rowindex).OPT_ISSUE_QTY!FieldValFloat,v.DataTable.RawMatHd(v.Args.rowindex).Issued_Qty!FieldValFloat,v.Local.fDiffOpt)
+		f.Data.DataTable.SetValue("RawMatHd",v.Args.rowindex,"DIFF_OPT_QTY",v.Local.fDiffOpt)
+		f.Intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+		F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+		f.Intrinsic.Control.If(v.DataView.RawMatHd$RawMatLn!TempView.RowCount,>,0)
+			'here we take the multplying factor based on the difference in est qty to actual qty and use that to calculate the quantities of each material sequence. we are also calculating and storing the units and the dollars estimated values just in case they want to save it to the job ops table.
+			f.Intrinsic.Math.sub(v.DataTable.RawMatHd(v.Args.rowindex).Est_Req_Qty!FieldValFloat,v.DataTable.RawMatHd(v.Args.rowindex).OPT_ISSUE_QTY!FieldValFloat,v.Local.fHold)
+			f.Intrinsic.Math.div(v.Local.fHold,v.DataTable.RawMatHd(v.Args.rowindex).Est_Req_Qty!FieldValFloat,v.Local.fHold)
+			f.Intrinsic.Math.sub(1,v.Local.fHold,v.Local.fOptMult)
+			f.Intrinsic.Control.For(v.Local.iCount2,0,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--,1)
+				v.Local.iIndex.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).DataTableIndex)
+				f.Intrinsic.Math.mult(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.icount2).units!FieldValFloat,v.Local.fOptMult,v.Local.fOptValRun)
+				f.intrinsic.Math.Round(v.Local.fOptValRun,4,v.Local.fOptValRun)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"UNITS",v.Local.fOptValRun)
+				f.Intrinsic.Math.mult(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.icount2).dollars_estimated!FieldValFloat,v.Local.fOptMult,v.Local.fOptValDollar)
+				f.intrinsic.Math.Round(v.Local.fOptValDollar,2,v.Local.fOptValDollar)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"Dollars_Estimated",v.Local.fOptValDollar)
+				f.Intrinsic.Math.mult(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).Est_Req_Qty!fieldvalFloat,v.Local.fOptMult,v.Local.fOptVal)		
+				f.intrinsic.Math.Round(v.Local.fOptVal,4,v.Local.fOptVal)
+				v.Local.sTemp.set(v.Local.fOptVal)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"OPT_ISSUE_QTY",v.Local.fOptVal)
+				f.Intrinsic.Control.If(v.Local.iCount2,=,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--)
+					F.Data.DataView.ToDataTable("RawMatHd","TempView","TempDT")
+					f.Data.DataTable.Compute("TempDT","Sum(OPT_ISSUE_QTY)","",v.Local.fCheck)
+					f.Data.DataTable.Close("TempDT")
+					f.Intrinsic.Math.Sub(v.Local.fIssue,v.Local.fCheck,v.Local.fCheck)
+					f.Intrinsic.Control.If(v.Local.fCheck,>,0)
+						f.Intrinsic.Math.Add(v.DataTable.RawMatHd$RawMatLn(v.Local.iIndex).OPT_ISSUE_QTY.fieldvalfloat,v.Local.fCheck,v.Local.fOptVal)
+						f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"OPT_ISSUE_QTY",v.Local.fOptVal)
+					f.Intrinsic.Control.ElseIf(v.Local.fCheck,<,0)
+						f.Intrinsic.Math.Add(v.DataTable.RawMatHd$RawMatLn(v.Local.iIndex).OPT_ISSUE_QTY.fieldvalfloat,v.Local.fCheck,v.Local.fOptVal)
+						f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"OPT_ISSUE_QTY",v.Local.fOptVal)
+					f.Intrinsic.Control.EndIf					
+				f.Intrinsic.Control.EndIf
+'				f.Intrinsic.Math.Sub(v.DataTable.RawMatHd$RawMatLn(v.local.iIndex).OPT_ISSUE_QTY!FieldValFloat,v.DataTable.RawMatHd$RawMatLn(v.local.iIndex).Issued_Qty!FieldValFloat,v.Local.fDiffOpt)
+'				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"DIFF_OPT_QTY",v.Local.fOptVal)
+			f.Intrinsic.Control.Next(v.Local.iCount2)
+			v.Local.sRM.Set(v.DataTable.RawMatHd(v.Args.rowindex).Part!FieldVal)
+			v.Local.sSchedule.Set(v.Screen.FMatOpt!txtFlxSchd.text)
+			f.Intrinsic.String.Build("Select count(part) from GCG_4720_IssueData where part = '{0}' and schedule = '{1}'",v.Local.sRM,v.Local.sSchedule,v.Local.sSql)
+			f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSql,v.Local.fCheck)
+			f.Intrinsic.Control.If(v.Local.fCheck,>,0)
+				f.Intrinsic.String.Build("update GCG_4720_IssueData set issue_amt = '{0}' where part = '{1}' and schedule = '{2}'",v.Local.fIssue,v.Local.sRM,v.Local.sSchedule,v.Local.sSql)
+				f.ODBC.Connection!conx.Execute(v.Local.sSql)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("Insert Into GCG_4720_IssueData values('{0}','{1}','{2}','0')",v.Local.sSchedule,v.Local.sRM,v.Local.fIssue,v.Local.sSql)
+				f.ODBC.Connection!conx.Execute(v.Local.sSql)
+			f.Intrinsic.Control.EndIf
+			f.Data.DataView.ToDataTable("RawMatHd", "TempView","TempDT")
+			f.Data.DataTable.AddColumn("TempDT","SCHEDULE","STRING")
+			f.Data.DataTable.SetValue("TempDT",-1,"SCHEDULE",v.Local.sSchedule)
+			f.Data.DataTable.SaveToDB("TempDT","conx","GCG_4720_ISSUEDETAIL","SCHEDULE*!*JOB*!*SUFFIX*!*SEQ*!*PART",256,"SCHEDULE@!@SCHEDULE*!*JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQ@!@SEQ*!*PART@!@PART*!*OPT_ISSUE_QTY@!@ISSUE_AMT")
+			f.Intrinsic.Control.If(v.Screen.FMatOpt!chhSave2JobOps.checkedAsBoolean)
+				f.Data.DataTable.SaveToDB("TempDT","conx","JOB_OPERATIONS","JOB*!*SUFFIX*!*SEQ*!*PART",256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQ@!@SEQ*!*PART@!@PART*!*UNITS@!@UNITS*!*OPT_ISSUE_QTY@!@HOURS_ESTIMATED*!*DOLLARS_ESTIMATED@!@DOLLARS_ESTIMATED")
+			f.Intrinsic.Control.EndIf
+			f.Data.DataTable.Close("TempDT")
+		f.Intrinsic.Control.EndIf
+		f.Data.DataView.Close("RawMatHd","TempView")
+		v.Global.bEdit.Set(True)
+		gui.FMatOpt..Enabled(True)
+		f.Intrinsic.Control.UnBlockEvents
+	f.Intrinsic.Control.ElseIf(v.Local.fIssue,=,0)
+		v.Local.sRM.Set(v.DataTable.RawMatHd(v.Args.rowindex).Part!FieldVal)
+		f.Intrinsic.Math.Sub(v.DataTable.RawMatHd(v.Args.rowindex).OPT_ISSUE_QTY!FieldValFloat,v.DataTable.RawMatHd(v.Args.rowindex).Issued_Qty!FieldValFloat,v.Local.fDiffOpt)
+		f.Data.DataTable.SetValue("RawMatHd",v.Args.rowindex,"DIFF_OPT_QTY",v.Local.fDiffOpt)
+		f.Intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+		F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+		f.Intrinsic.Control.If(v.DataView.RawMatHd$RawMatLn!TempView.RowCount,>,0)
+			f.Intrinsic.Control.For(v.Local.iCount2,0,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--,1)
+				v.Local.iIndex.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).DataTableIndex)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"OPT_ISSUE_QTY",v.Local.fOptVal)
+			f.Intrinsic.Control.Next(v.Local.iCount2)
+			v.Local.sRM.Set(v.DataTable.RawMatHd(v.Args.rowindex).Part!FieldVal)
+			v.Local.sSchedule.Set(v.Screen.FMatOpt!txtFlxSchd.text)
+			f.Intrinsic.String.Build("Select count(part) from GCG_4720_IssueData where part = '{0}' and schedule = '{1}'",v.Local.sRM,v.Local.sSchedule,v.Local.sSql)
+			f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSql,v.Local.fCheck)
+			f.Intrinsic.Control.If(v.Local.fCheck,>,0)
+				f.Intrinsic.String.Build("update GCG_4720_IssueData set issue_amt = '{0}' where part = '{1}' and schedule = '{2}'",v.Local.fIssue,v.Local.sRM,v.Local.sSchedule,v.Local.sSql)
+				f.ODBC.Connection!conx.Execute(v.Local.sSql)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("Insert Into GCG_4720_IssueData values('{0}','{1}','{2}','0')",v.Local.sSchedule,v.Local.sRM,v.Local.fIssue,v.Local.sSql)
+				f.ODBC.Connection!conx.Execute(v.Local.sSql)
+			f.Intrinsic.Control.EndIf
+			f.Intrinsic.String.Build("delete from GCG_4720_ISSUEDETAIL where part = '{0}' and schedule = '{1}'",v.Local.sRM,v.Local.sSchedule,v.Local.sSql)
+			f.ODBC.Connection!conx.Execute(v.Local.sSql)
+		f.Intrinsic.Control.EndIf
+		v.Global.bEdit.Set(True)
+		f.Data.DataView.Close("RawMatHd","TempView")
+	f.Intrinsic.Control.ElseIf(v.Local.fIssue,<,0)
+		f.Data.DataTable.SetValue("RawMatHd",v.Args.rowindex,"OPT_ISSUE_QTY",0)
+		f.Intrinsic.Math.Sub(v.DataTable.RawMatHd(v.Args.rowindex).OPT_ISSUE_QTY!FieldValFloat,v.DataTable.RawMatHd(v.Args.rowindex).Issued_Qty!FieldValFloat,v.Local.fDiffOpt)
+		f.Data.DataTable.SetValue("RawMatHd",v.Args.rowindex,"DIFF_OPT_QTY",v.Local.fDiffOpt)
+		f.Intrinsic.UI.Msgbox("Cannot save optimized quantities less than zero.")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.ElseIf(v.Args.column,=,"ACT_ISSUE_QTY")
+	f.Intrinsic.Control.BlockEvents
+	f.Intrinsic.Control.If(v.Args.column,=,"Sel_Seq")
+		v.Local.sRM.Set(v.DataTable.RawMatHd$RawMatLn(v.Args.rowindex).Part!FieldVal)
+		f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.Args.rowindex,"Sel_Seq",v.DataTable.RawMatHd$RawMatLn(v.Args.rowindex).Sel_Seq!FieldValNot)
+	f.Intrinsic.Control.Else
+		v.Local.sRM.Set(v.DataTable.RawMatHd(v.Args.rowindex).Part!FieldVal)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+	
+	F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+	f.Data.DataView.SetValue("RawMatHd$RawMatLn", "TempView",-1,"ACT_ISSUE_QTY",0)
+	f.Data.DataView.Close("RawMatHd$RawMatLn","TempView")
+	
+	f.Intrinsic.Control.If(v.Args.column,=,"Sel_Seq")
+		f.intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+		F.Data.DataView.Create("RawMatHd", "TempVw",22,v.Local.sFilter,"")
+		v.Local.iIndex.Set(v.DataView.RawMatHd!TempVw(0).DataTableIndex)
+		f.Data.DataView.Close("RawMatHd","TempVw")
+		v.Local.fIssue.Set(v.DataTable.RawMatHd(v.Local.iIndex).ACT_ISSUE_QTY!FieldValFloat)
+	f.Intrinsic.Control.Else
+		v.Local.fIssue.Set(v.DataTable.RawMatHd(v.Args.rowindex).ACT_ISSUE_QTY!FieldValFloat)
+	f.Intrinsic.Control.EndIf
+	
+
+	f.Intrinsic.Control.If(v.Local.fIssue,>,0)
+
+		
+		f.Intrinsic.String.Build("Part = '{0}' and Sel_Seq = True",v.Local.sRM,v.Local.sFilter)
+		
+		F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+		f.Data.DataTable.Compute("RawMatHd$RawMatLn","Sum(DIFF_ISSUE)",v.Local.sFilter,v.Local.fDiffIssue)
+		
+		f.Intrinsic.Control.If(v.DataView.RawMatHd$RawMatLn!TempView.RowCount,>,0)
+
+			f.intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+			F.Data.DataView.Create("RawMatHd", "TempVw",22,v.Local.sFilter,"")
+			v.Local.iIndex.Set(v.DataView.RawMatHd!TempVw(0).DataTableIndex)
+			f.Data.DataView.Close("RawMatHd","TempVw")
+			f.Intrinsic.Control.If(v.Args.column,=,"Sel_Seq")
+				f.Intrinsic.Math.div(v.DataTable.RawMatHd(v.Local.iIndex).ACT_ISSUE_QTY!FieldValFloat,v.Local.fDiffIssue,v.Local.fHold)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.Math.div(v.DataTable.RawMatHd(v.Args.rowindex).ACT_ISSUE_QTY!FieldValFloat,v.Local.fDiffIssue,v.Local.fHold)
+			f.Intrinsic.Control.EndIf
+			
+			v.Local.fOptMult.Set(v.Local.fHold)
+			f.Intrinsic.Control.For(v.Local.iCount2,0,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--,1)
+				v.Local.iIndex.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).DataTableIndex)
+				f.Intrinsic.Math.mult(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).Diff_Issue!fieldvalFloat,v.Local.fOptMult,v.Local.fOptVal)		
+				f.intrinsic.Math.Round(v.Local.fOptVal,4,v.Local.fOptVal)
+				v.Local.sTemp.set(v.Local.fOptVal.String)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"ACT_ISSUE_QTY",v.Local.fOptVal)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"REV_ISSUE_QTY",0)
+				f.Data.DataTable.acceptChanges("RawMatHd$RawMatLn")
+				f.Intrinsic.Control.If(v.Local.iCount2,=,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--)
+					F.Data.DataView.ToDataTable("RawMatHd","TempView","TempDT")
+					f.Data.DataTable.Compute("TempDT","Sum(ACT_ISSUE_QTY)","",v.Local.fCheck)
+					f.intrinsic.Math.Round(v.Local.fCheck,4,v.Local.fCheck)
+					f.Data.DataTable.Close("TempDT")
+					f.Intrinsic.Math.Sub(v.Local.fIssue,v.Local.fCheck,v.Local.fCheck)
+					f.intrinsic.Math.Round(v.Local.fCheck,4,v.Local.fCheck)
+					f.Intrinsic.Control.If(v.Local.fCheck,>,0)
+						f.Intrinsic.Math.Add(v.DataTable.RawMatHd$RawMatLn(v.Local.iIndex).ACT_ISSUE_QTY.fieldvalfloat,v.Local.fCheck,v.Local.fOptVal)
+						f.intrinsic.Math.Round(v.Local.fOptVal,4,v.Local.fOptVal)
+						f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"ACT_ISSUE_QTY",v.Local.fOptVal)
+						f.Data.DataTable.acceptChanges("RawMatHd$RawMatLn")
+					f.Intrinsic.Control.ElseIf(v.Local.fCheck,<,0)
+						f.Intrinsic.Math.Add(v.DataTable.RawMatHd$RawMatLn(v.Local.iIndex).ACT_ISSUE_QTY.fieldvalfloat,v.Local.fCheck,v.Local.fOptVal)
+						f.intrinsic.Math.Round(v.Local.fOptVal,4,v.Local.fOptVal)
+						f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"ACT_ISSUE_QTY",v.Local.fOptVal)
+						f.Data.DataTable.acceptChanges("RawMatHd$RawMatLn")
+					f.Intrinsic.Control.EndIf
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.Next(v.Local.iCount2)
+		f.Intrinsic.Control.EndIf	
+		f.Data.DataView.Close("RawMatHd","TempView")
+		f.Intrinsic.Control.UnBlockEvents
+	f.Intrinsic.Control.ElseIf(v.Local.fIssue,<,0)
+		
+'		v.Local.fIssue.Set(v.Local.sRevIssue(0).long)
+		f.Intrinsic.Control.If(v.Args.column,=,"Sel_Seq")
+			f.intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+			F.Data.DataView.Create("RawMatHd", "TempVw",22,v.Local.sFilter,"")
+			v.Local.iIndex.Set(v.DataView.RawMatHd!TempVw(0).DataTableIndex)
+			f.Data.DataView.Close("RawMatHd","TempVw")
+			v.Local.fHold.set(v.DataTable.RawMatHd(v.Local.iIndex).Est_Req_Qty!FieldValFloat)
+		f.Intrinsic.Control.Else
+			v.Local.fHold.set(v.DataTable.RawMatHd(v.Args.rowindex).Est_Req_Qty!FieldValFloat)
+		f.Intrinsic.Control.EndIf
+
+		
+		f.Intrinsic.String.Build("Part = '{0}' and Sel_Seq = True",v.Local.sRM,v.Local.sFilter)
+		F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+		f.Intrinsic.Control.If(v.DataView.RawMatHd$RawMatLn!TempView.RowCount,>,0)
+			f.Intrinsic.Control.For(v.Local.iCount2,0,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--,1)
+				v.Local.iIndex.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).DataTableIndex)
+				f.Intrinsic.Math.div(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).Est_Req_Qty!FieldValFloat,v.Local.fHold,v.Local.fOptVal)
+				f.Intrinsic.Math.Mult(v.Local.fOptVal,v.Local.fIssue,v.Local.fOptVal)
+				f.intrinsic.Math.Round(v.Local.fOptVal,4,v.Local.fOptVal)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"REV_ISSUE_QTY",v.Local.fOptVal)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"ACT_ISSUE_QTY",0)
+				f.Intrinsic.Control.If(v.Local.iCount2,=,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--)
+					F.Data.DataView.ToDataTable("RawMatHd","TempView","TempDT")
+					f.Data.DataTable.Compute("TempDT","Sum(REV_ISSUE_QTY)","",v.Local.fCheck)
+					f.Data.DataTable.Close("TempDT")
+					f.Intrinsic.Math.Sub(v.Local.fIssue,v.Local.fCheck,v.Local.fCheck)
+					f.Intrinsic.Control.If(v.Local.fCheck,>,0)
+						f.Intrinsic.Math.Add(v.DataTable.RawMatHd$RawMatLn(v.Local.iIndex).REV_ISSUE_QTY.fieldvalfloat,v.Local.fCheck,v.Local.fOptVal)
+						f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"REV_ISSUE_QTY",v.Local.fOptVal)
+					f.Intrinsic.Control.ElseIf(v.Local.fCheck,<,0)
+						f.Intrinsic.Math.add(v.DataTable.RawMatHd$RawMatLn(v.Local.iIndex).REV_ISSUE_QTY.fieldvalfloat,v.Local.fCheck,v.Local.fOptVal)
+						f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"REV_ISSUE_QTY",v.Local.fOptVal)
+					f.Intrinsic.Control.EndIf					
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.Next(v.Local.iCount2)		
+		f.Intrinsic.Control.EndIf
+		f.Data.DataView.Close("RawMatHd","TempView")
+		f.Intrinsic.Control.UnBlockEvents
+	f.Intrinsic.Control.ElseIf(v.Local.fIssue,=,0)
+		f.Intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+		F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+		f.Intrinsic.Control.If(v.DataView.RawMatHd$RawMatLn!TempView.RowCount,>,0)
+			f.Intrinsic.Control.For(v.Local.iCount2,0,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--,1)
+				v.Local.iIndex.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).DataTableIndex)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"ACT_ISSUE_QTY",0)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"REV_ISSUE_QTY",0)
+			f.Intrinsic.Control.Next(v.Local.iCount2)
+		f.Intrinsic.Control.EndIf	
+		f.Data.DataView.Close("RawMatHd","TempView")
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.UnBlockEvents
+f.Intrinsic.control.EndIf
+
+Program.Sub.GsGcMatOpt_CellValueChanged.End
+
+Program.Sub.cmdPopWCSel_Click.Start
+v.Local.sSelJobs.Declare(String)
+v.Local.sSQL.Declare(String)
+v.Local.iCount.Declare(Long)
+v.Local.sWC.Declare(String)
+v.Local.sFilter.Declare(String)
+
+'populates the WC selection grid based on job selections.
+f.Data.Dataview.Create("WODT","SelWOVw",22,"Selected = 1","")
+f.Intrinsic.Control.If(v.Dataview.WODT!SelWOVw.RowCount,=,0)
+	f.Intrinsic.UI.Msgbox("No work orders have been selected.")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Data.dataview.ToString("WODT","SelWOVw","Job*!*Suffix","","','",v.Local.sSelJobs)
+
+f.Intrinsic.String.Concat("'",v.Local.sSelJobs,"'",v.Local.sSelJobs)
+v.Global.sSelJobs.Set(v.Local.sSelJobs)
+f.data.DataView.Close("WODT","SelWOVw")
+gui.fWOSelForFlex..Enabled(false)
+gui.fWOSelForFlex.GsGCWCSel.SuspendLayout
+f.Intrinsic.Control.If(v.DataTable.WCDT$RMDT.Exists,=,true)
+	f.data.dataview.Close("WCDT$RMDT","RMVW")
+	f.data.Datatable.Close("WCDT$RMDT")
+f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.If(v.DataTable.WCDT.Exists,=,true)
+	f.data.dataview.Close("WCDT","WCVW")
+	f.data.Datatable.Close("WCDT")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.DataTable.ALLRMDT.Exists,=,true)
+	f.data.Datatable.Close("ALLRMDT")
+f.Intrinsic.Control.EndIf
+
+
+f.Data.Datatable.CreateFromSQL("WCDescDT","conx","Select Machine as WC,WC_NAME as Descr from WORKCENTERS")
+f.Data.Datatable.CreateFromSQL("WGDescDT","conx","select Work_group as WC,Descr as Descr from WORKGROUP_HEAD")
+f.Data.DataTable.Merge("WGDescDT","WCDescDT",true,2)
+f.Data.DataTable.Close("WGDescDT")
+
+f.Data.Dictionary.CreateFromDatatable("WCDescDict","WCDescDT","WC","Descr")
+
+f.Data.DataTable.Close("WCDescDT")
+
+
+f.Intrinsic.String.build("Select RTRIM(' ') as Z,cast(0 as bit) as SelectWC,RTRIM(Part) as WC,RTRIM(' ') as Descr, Sum(Hours_estimated) as Hours_Estimated from V_JOB_OPERATIONS where LMO = 'L' and job + suffix in ({0}) and RTRIM(Part) <> ''  and flag_closed <> 'Y' and left(Part,1) <> '*' group by part",v.Global.sSelJobs,v.local.sSQL)
+f.data.DataTable.CreateFromSQL("WCDT","conx",v.Local.sSQL,true)
+f.Data.DataTable.FillFromDictionary("WCDT","WCDescDict","WC","Descr")
+
+f.Data.Dictionary.Close("WCDescDict")
+
+
+f.Data.Dictionary.CreateFromSQL("PartDescDict","conx","Select Part,Description from v_inventory_mstr")
+f.Data.Dictionary.SetDefaultReturn("PartDescDict","")
+
+
+
+f.Data.Datatable.createFromSQL("WCDT$RMDT","conx","Select Distinct  RTRIM(' ') as Z,cast(0 as bit) as SelectRM, part as RM,RTRIM(' ') as Descr, RTRIM(' ') as WC from V_JOB_OPERATIONS where job = 'XXXXXX'",true)
+
+f.intrinsic.String.Build("Select distinct Job + Suffix as JS, part from V_JOB_OPERATIONS where LMO = 'L' and job + suffix in ({0})  and left(Part,1) <> '*' and flag_closed <> 'Y'",v.Global.sSelJobs,v.Local.sSQL)
+f.data.DataTable.CreateFromSQL("FillDT","conx",v.Local.sSQL)
+
+
+f.intrinsic.Control.for(v.Local.iCount,0,v.DataTable.WCDT.RowCount--,1)
+	v.Local.sWC.Set(v.DataTable.WCDT(v.Local.icount).WC!fieldvalTrim)
+	v.Local.sSelJobs.Set("")
+	f.intrinsic.String.Build("[Part] = '{0}'",v.Local.sWC,v.Local.sFilter)
+	f.Data.DataView.Create("FillDT","FillVw",22,v.Local.sFilter,"")
+	f.Data.DataView.ToString("FillDT","FillVw","JS","","','",v.Local.sSelJobs)
+	f.Intrinsic.String.Build("'{0}'",v.Local.sSelJobs,v.Local.sSelJobs)
+	f.data.DataView.Close("FillDT","FillVw")
+	
+	
+
+	f.intrinsic.String.Build("Select Distinct RTRIM(' ') as Z,cast(0 as bit) as SelectRM, part as RM,RTRIM(' ') as Descr, RTRIM('{1}') as WC from V_JOB_OPERATIONS where LMO = 'M' and SEQ < '995000' and job + suffix in ({0})  and flag_closed <> 'Y'",v.Local.sSelJobs,v.Local.sWC,v.Local.sSQL)
+	f.data.DataTable.CreateFromSQL("tempDT","conx",v.Local.sSQL)
+	f.Data.DataTable.Merge("tempDT","WCDT$RMDT",true,2)
+	f.Data.DataTable.Close("tempDT")
+	
+
+f.Intrinsic.Control.Next(v.Local.iCount)
+
+f.data.DataTable.Close("FillDT")
+
+f.Data.DataTable.FillFromDictionary("WCDT$RMDT","PartDescDict","RM","Descr")
+f.Data.Dictionary.Close("PartDescDict")
+
+f.Data.DataView.Create("WCDT","WCVW", 22)
+f.Data.DataView.Create("WCDT$RMDT","RMVW", 22)
+f.data.DataTable.AddRelation("WCDT","WC","WCDT$RMDT","WC") 
+
+
+gui.fWOSelForFlex.GsGCWCSel.AddGridviewFromDataview("WCGrid","WCDT","WCVW")
+gui.fWOSelForFlex.GsGCWCSel.AddGridviewFromDataview("RMGrid","WCDT","RMVW")
+
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Z","CellBackColor", "PapayaWhip")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Z", "caption", " ")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Z", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Z", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid","Z","MinWidth",20)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid","Z","MaxWidth",20)
+
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "SelectWC","CellBackColor", "PapayaWhip")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "SelectWC","headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "SelectWC", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "SelectWC", "caption", "Select Work Center")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "SelectWC", "ReadOnly", False)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "SelectWC", "AllowEdit", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid","SelectWC","MinWidth",130)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid","SelectWC","MaxWidth",135)
+
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "WC","CellBackColor", "PapayaWhip")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "WC","headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "WC", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "WC", "caption", "Work Center")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "WC", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "WC", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "WC", "HeaderHAlignment", "Center")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "WC", "CellHAlignment ", "Center")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid","WC","MinWidth",140)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid","WC","MaxWidth",145)
+
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Descr","CellBackColor", "PapayaWhip")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Descr","headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Descr", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Descr", "caption", "Description")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Descr", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Descr", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Descr", "HeaderHAlignment", "Center")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Descr", "CellHAlignment ", "Near")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid","Descr","MinWidth",200)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid","Descr","MaxWidth",205)
+
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Hours_Estimated","CellBackColor", "PapayaWhip")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Hours_Estimated","headerforecolor", v.Color.PRI-GSS-00)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Hours_Estimated", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Hours_Estimated", "caption", "Total Time Estimated")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Hours_Estimated", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Hours_Estimated", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Hours_Estimated", "HeaderHAlignment", "Center")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid", "Hours_Estimated", "CellHAlignment ", "Center")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid","Hours_Estimated","MinWidth",140)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("WCGrid","Hours_Estimated","MaxWidth",145)
+
+
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "SelectRM","CellBackColor", "LightSteelBlue")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "SelectRM","headerforecolor","Navy")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "SelectRM", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "SelectRM", "caption", "Select Raw Material")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "SelectRM", "ReadOnly", False)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "SelectRM", "AllowEdit", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid","SelectRM","MinWidth",140)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid","SelectRM","MaxWidth",145)
+
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "Descr","CellBackColor", "LightSteelBlue")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "Descr","headerforecolor", "Navy")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "Descr", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "Descr", "caption", "Description")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "Descr", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "Descr", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "Descr", "HeaderHAlignment", "Center")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "Descr", "CellHAlignment ", "Near")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid","Descr","MinWidth",200)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid","Descr","MaxWidth",205)
+
+
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "RM","CellBackColor", "LightSteelBlue")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "RM","headerforecolor","Navy")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "RM", "headerfontbold", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "RM", "caption", "Raw Material")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "RM", "ReadOnly", True)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "RM", "AllowEdit", False)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "RM", "HeaderHAlignment", "Center")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "RM", "CellHAlignment ", "Center")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid","RM","MinWidth",140)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid","RM","MaxWidth",145)
+
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "Z","CellBackColor", "LightSteelBlue")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "Z", "caption", " ")
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid","Z","MinWidth",125)
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid","Z","MaxWidth",130)
+
+Gui.fWOSelForFlex.GsGCWCSel.SetColumnProperty("RMGrid", "WC","visible",false)
+
+
+
+
+
+gui.fWOSelForFlex.GsGCWCSel.MainView("WCGrid")
+gui.fWOSelForFlex.GsGCWCSel.ResumeLayout
+gui.fWOSelForFlex..Enabled(True)
+gui.fWOSelForFlex..SetFocus
+Program.Sub.cmdPopWCSel_Click.End
+
+Program.Sub.lvwFlxSchd_DblClick.Start
+f.Intrinsic.control.CallSub(cmdPopGrid_Click)
+Program.Sub.lvwFlxSchd_DblClick.End
+
+Program.Sub.GsGCFlxSchd_RowCellClick.Start
+v.Local.sFlexSched.Declare(String)
+f.Intrinsic.Control.If(v.Args.clicks.long,>,1)
+	v.Local.sFlexSched.set(v.DataTable.popDT(v.Args.RowIndex).Schedule!fieldvaltrim)
+	f.Intrinsic.Control.If(v.Local.sFlexSched.Trim,<>,"")
+		f.Intrinsic.control.CallSub(cmdPopGrid_Click,"Schedule",v.Local.sFlexSched)
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.EndIf
+
+Program.Sub.GsGCFlxSchd_RowCellClick.End
+
+Program.Sub.GsGcMatOpt_RowCellClick.Start
+v.Local.sSql.Declare(String)
+v.Local.sListSel.Declare(String)
+v.Local.sTemp.Declare(String)
+v.Local.bcheck.Declare(boolean)
+v.Local.bExceed.Declare(boolean)
+v.Local.sFilter.Declare(String)
+v.Local.sRM.Declare(String)
+v.Local.sPart.Declare(String)
+v.Local.sRev.Declare(String)
+v.Local.sWC.Declare(String)
+v.Local.sWG.Declare(String)
+v.Local.sJob.Declare(String)
+v.Local.sSuffix.Declare(String)
+v.Local.sSeq.Declare(String)
+v.Local.sFlag.Declare(String)
+v.Local.sJss.Declare(String)
+v.Local.iCount.Declare(Long)
+v.Local.iIndex.Declare(Long)
+v.Local.iCount2.Declare(Long)
+v.Local.iRet.Declare(Long)
+v.Local.fIssue.Declare(Float)
+v.Local.fIndIssue.Declare(Float)
+v.Local.fOptIssue.Declare(Float)
+v.Local.sIssue.Declare(String)
+v.Local.fHold.Declare(Float)
+v.Local.fOptMult.Declare(Float)
+v.Local.fOptVal.Declare(Float)
+v.Local.fCheck.Declare(Float)
+v.Local.iCheck.Declare(Long)
+v.Local.fDiffOpt.Declare(Float)
+v.Local.sRevIssue.Declare(String)
+v.Local.sSchedule.Declare(String)
+v.Local.sRet.Declare(String)
+v.Local.fDiffIssue.Declare(Float)
+
+gui.FMatOpt..Enabled(False)
+
+'handles the save option on the opt side of things and the issue option on the material handler side of things. (this is currently not being used as we have changed it to save automatically when a qty is entered - see cellvalue changed event for the grid)
+f.Intrinsic.Control.If(v.Args.column,=,"SAVE")
+	v.Local.fIssue.Set(v.DataTable.RawMatHd(v.Args.rowindex).OPT_ISSUE_QTY!FieldValFloat)
+	f.Intrinsic.Control.If(v.Local.fIssue,<=,0)
+		f.Intrinsic.UI.Msgbox("Cannot save zero or negative optimized quantities.")
+		gui.FMatOpt..Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	v.Local.sRM.Set(v.DataTable.RawMatHd(v.Args.rowindex).Part!FieldVal)
+	v.Local.sSchedule.Set(v.Screen.FMatOpt!txtFlxSchd.text)
+	f.Intrinsic.String.Build("Select count(part) from GCG_4720_IssueData where part = '{0}' and schedule = '{1}'",v.Local.sRM,v.Local.sSchedule,v.Local.sSql)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSql,v.Local.fCheck)
+
+	f.Intrinsic.Control.If(v.Local.fCheck,>,0)
+		v.Local.bCheck.Set(v.DataTable.RawMatHd(v.Args.rowindex).CLose_seq!FieldVal)
+		f.Intrinsic.Control.If(v.Local.bCheck,=,True)
+			f.Intrinsic.UI.Msgbox("Cannot edit optimized quantities for closed lines.")
+			gui.FMatOpt..Enabled(True)
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.String.Build("update GCG_4720_IssueData set issue_amt = '{0}' where part = '{1}' and schedule = '{2}'",v.Local.fIssue,v.Local.sRM,v.Local.sSchedule,v.Local.sSql)
+		f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("Insert Into GCG_4720_IssueData values('{0}','{1}','{2}','0')",v.Local.sSchedule,v.Local.sRM,v.Local.fIssue,v.Local.sSql)
+		f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+	F.Data.DataView.Create("RawMatHd$RawMatLn","TempView",22,v.Local.sFilter,"")
+	f.Data.DataView.ToDataTable("RawMatHd", "TempView","TempDT")
+	f.Data.Dataview.Close("RawMatHd$RawMatLn", "TempView")
+	f.Data.DataTable.AddColumn("TempDT","SCHEDULE","STRING")
+	f.Data.DataTable.SetValue("TempDT",-1,"SCHEDULE",v.Local.sSchedule)
+	
+	f.Data.DataTable.SaveToDB("TempDT","conx","GCG_4720_ISSUEDETAIL","SCHEDULE*!*JOB*!*SUFFIX*!*SEQ*!*PART",256,"SCHEDULE@!@SCHEDULE*!*JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQ@!@SEQ*!*PART@!@PART*!*OPT_ISSUE_QTY@!@ISSUE_AMT")
+	f.Intrinsic.Control.If(v.Screen.FMatOpt!chhSave2JobOps.checkedAsBoolean)
+		f.Data.DataTable.SaveToDB("TempDT","conx","JOB_OPERATIONS","JOB*!*SUFFIX*!*SEQ*!*PART",256,"JOB@!@JOB*!*SUFFIX@!@SUFFIX*!*SEQ@!@SEQ*!*PART@!@PART*!*UNITS@!@UNITS*!*OPT_ISSUE_QTY@!@HOURS_ESTIMATED*!*DOLLARS_ESTIMATED@!@DOLLARS_ESTIMATED")
+
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.DataTable.Close("TempDT")
+	v.Global.bEdit.Set(false)
+	gui.FMatOpt..Enabled(True)
+f.Intrinsic.Control.ElseIf(v.Args.column,=,"ISSUE")
+	v.Local.fIssue.Set(v.DataTable.RawMatHd(v.Args.rowindex).ACT_ISSUE_QTY!FieldValFloat)
+	v.Local.fOptIssue.Set(v.DataTable.RawMatHd(v.Args.rowindex).OPT_ISSUE_QTY!FieldValFloat)
+	v.Local.sRM.Set(v.DataTable.RawMatHd(v.Args.rowindex).Part!FieldVal)
+	f.Intrinsic.Control.If(v.Local.fIssue,=,0)
+		gui.FMatOpt..Enabled(True)
+		f.Intrinsic.Control.ExitSub	
+	f.Intrinsic.Control.EndIf
+	'check to see if you are reverse issuing stuff
+	f.Intrinsic.Control.If(v.Local.fIssue,<,0)
+		v.Local.sRevIssue.Set(v.Local.fIssue.String)
+		f.Intrinsic.String.Split(v.Local.sRevIssue,".",v.Local.sRevIssue)
+		f.Intrinsic.Control.If(v.Local.sRevIssue(1).float,>,0)
+			f.Intrinsic.UI.Msgbox("You are reverse issuing a partial value. This could affect Inventory. Do you wish to continue?","Reverse Issue Partials?",4,v.Local.iRet)
+			f.Intrinsic.Control.If(v.Local.iRet,=,7)
+				gui.FMatOpt..Enabled(True)
+				f.Intrinsic.Control.UnBlockEvents
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		'launch lot bin selection to specify which lot and bin the item is being returned to
+		f.Intrinsic.String.Build("Select Distinct Part, Lot,Bin,Heat,Serial_Number,Quantity from V_ITEM_MASTER where part = '{0}'",v.Local.sRM,v.local.sSql)
+		F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+		f.Intrinsic.UI.Browser("Select Bin","conx",V.Local.sSql,"Part*!*Lot*!*Bin*!*Heat*!*Serial*!*Quantity","400*!*400*!*300*!*300*!*300*!*300",V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,=,"***CANCEL***")
+			F.Intrinsic.UI.Msgbox("No Lot/Bin Selected")
+			gui.FMatOpt..Enabled(True)
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		F.Intrinsic.Control.If(v.Local.sRet,=,v.Ambient.Cancel)
+			gui.FMatOpt..Enabled(True)
+			f.Intrinsic.Control.ExitSub	
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(v.Local.fIssue,>,0,"AND",v.Local.fIssue,>,v.Local.sRet(5).float)
+			F.Intrinsic.UI.Msgbox("Not enough quantity in selected Lot/Bin to issue material")
+			gui.FMatOpt..Enabled(True)
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		
+		v.Local.sIssue.Set(v.Local.fIssue.String)
+		f.Intrinsic.String.Format(v.Local.sIssue,"########.0000",v.Local.sIssue)
+		f.Intrinsic.String.Right(v.Local.sRM,3,v.Local.sRev)
+		f.Intrinsic.String.left(v.Local.sRM,17,v.Local.sPart)
+		f.Intrinsic.String.Build("Part = '{0}' and Sel_Seq = True",v.Local.sRM,v.Local.sFilter)
+		
+		F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+		v.Local.iCheck.Set(v.DataTable.RawMatHd(v.Args.rowindex).CLose_seq!FieldValLong)
+		
+		f.Intrinsic.Control.If(v.DataView.RawMatHd$RawMatLn!TempView.RowCount,>,0)
+			f.Intrinsic.Control.For(v.Local.iCount2,0,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--,1)
+				v.Local.iIndex.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).DataTableIndex)
+				f.Intrinsic.Control.If(v.Local.fIssue,>,0)
+					v.Local.fIndIssue.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).ACT_ISSUE_QTY!fieldvalFloat)
+				f.Intrinsic.Control.ElseIf(v.Local.fIssue,<,0)
+					v.Local.fIndIssue.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).REV_ISSUE_QTY!fieldvalFloat)
+				f.Intrinsic.Control.EndIf
+				v.Local.sIssue.Set(v.Local.fIndIssue.String)
+				f.Intrinsic.String.Format(v.Local.sIssue,"########.0000",v.Local.sIssue)
+				
+				v.Local.sJss.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).JSS!fieldval)
+				
+				f.Intrinsic.String.Split(v.Local.sJss,"-",v.Local.sJss)
+				v.Local.sJob.Set(v.Local.sJss(0))
+				v.Local.sSuffix.Set(v.Local.sJss(1))
+				v.Local.sSeq.Set(v.Local.sJss(2))
+				v.Local.sJss.Redim(0,0)
+				
+				
+			
+				F.Data.DataTable.AddRow("450100","Part",v.Local.sPart,"Rev",v.Local.sRev,"Location","","Quantity",v.Local.sIssue,"Lot",v.Local.sRet(1),"Bin",v.Local.sRet(2),"Heat",v.Local.sRet(3),"Serial",v.Local.sRet(4),"WONumber",v.Local.sJob,"WOSuffix",v.Local.sSuffix,"WOSeq",v.Local.sSeq)
+				
+				f.Intrinsic.Math.add(v.Local.fIndIssue,v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).Issued_Qty!fieldvalFloat,v.Local.fHold)
+				
+				f.intrinsic.Math.Round(v.Local.fHold,4,v.Local.fHold)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"Issued_Qty",v.Local.fHold)
+
+				f.Intrinsic.Math.Sub(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).Est_Req_Qty!fieldvalFloat,v.Local.fHold,v.Local.fCheck)
+				f.intrinsic.Math.Round(v.Local.fCheck,4,v.Local.fCheck)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"Diff_issue",v.Local.fCheck)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"ACT_ISSUE_QTY",0)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"REV_ISSUE_QTY",0)
+	
+	'				f.Intrinsic.Math.Sub(v.DataTable.RawMatHd$RawMatLn(v.local.iIndex).OPT_ISSUE_QTY!FieldValFloat,v.DataTable.RawMatHd$RawMatLn(v.local.iIndex).Issued_Qty!FieldValFloat,v.Local.fDiffOpt)
+	'				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"DIFF_OPT_QTY",v.Local.fOptVal)
+			f.Intrinsic.Control.Next(v.Local.iCount2)
+		
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.ElseIf(v.Local.fIssue,>,0)
+		'issuing material
+		f.Intrinsic.String.Build("Select Distinct CAST(0 AS Bit) AS Sel_Bin,Part, Lot,Bin,Heat,Serial_Number,Quantity,CAST(0 AS DOUBLE) AS Issue_Qty from V_ITEM_MASTER where part = '{0}'",v.Local.sRM,v.local.sSql)
+		v.Global.iIndex.set(v.Args.rowindex)
+		'call the lot bin selection screen.
+		f.Intrinsic.Control.CallSub(LoadLotBin,"SQL",v.Local.sSql,"Issue",v.Local.fIssue,"RM",v.Local.sRM)
+
+		f.Intrinsic.Control.ExitSub
+		
+		
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("RawMatHd$RawMatLn", "TempView")
+	f.Intrinsic.Math.add(v.Local.fIssue,v.DataTable.RawMatHd(v.Args.rowindex).Issued_Qty!FieldValFloat,v.Local.fHold)
+	f.intrinsic.Math.Round(v.Local.fHold,4,v.Local.fHold)
+	f.Data.DataTable.SetValue("RawMatHd",v.Args.rowindex,"Issued_Qty",v.Local.fHold)
+	f.Intrinsic.Math.Sub(v.DataTable.RawMatHd(v.Args.rowindex).Est_Req_Qty!FieldValFloat,v.Local.fHold,v.Local.fCheck)
+	f.Data.DataTable.SetValue("RawMatHd",v.Args.rowindex,"Diff_issue",v.Local.fCheck)
+	f.Intrinsic.Math.Sub(v.DataTable.RawMatHd(v.Args.rowindex).OPT_ISSUE_QTY!FieldValFloat,v.Local.fHold,v.Local.fCheck)
+	f.Data.DataTable.SetValue("RawMatHd",v.Args.rowindex,"DIFF_OPT_QTY",v.Local.fCheck)
+	f.Data.DataTable.SetValue("RawMatHd",v.Args.rowindex,"ACT_ISSUE_QTY",0)
+	F.Intrinsic.Control.CallSub(450100Sync)
+	gui.FMatOpt..Enabled(True)
+f.Intrinsic.Control.ElseIf(v.Args.column,=,"SAVE_SEQ")
+	
+	v.Local.fIssue.Set(v.DataTable.RawMatHd(v.Args.rowindex).ACT_ISSUE_QTY!FieldValFloat)
+	v.Local.sRM.Set(v.DataTable.RawMatHd(v.Args.rowindex).Part!FieldVal)
+	v.Local.bCheck.Set(v.DataTable.RawMatHd(v.Args.rowindex).CLose_seq!FieldVal)
+	v.Local.sSchedule.Set(v.Screen.FMatOpt!txtFlxSchd.text)
+	
+	f.Intrinsic.Control.If(v.Local.bCheck,=,true)
+		f.Intrinsic.UI.Msgbox("Do you want to close all associated material sequences?","Close Sequences!",4,v.Local.iCheck)
+		f.Intrinsic.Control.If(v.Local.iCheck,=,7)
+			gui.FMatOpt..Enabled(True)
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		v.Local.sFlag.Set("Y")
+		f.Intrinsic.String.Build("update GCG_4720_IssueData set Flag_closed = 1 where part = '{1}' and schedule = '{2}'",v.Local.fIssue,v.Local.sRM,v.Local.sSchedule,v.Local.sSql)
+		f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("Do you want to reopen all associated material sequences?","Close Sequences!",4,v.Local.iCheck)
+		f.Intrinsic.Control.If(v.Local.iCheck,=,7)
+			gui.FMatOpt..Enabled(True)
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		v.Local.sFlag.Set("")
+		f.Intrinsic.String.Build("update GCG_4720_IssueData set Flag_closed = 0 where part = '{1}' and schedule = '{2}'",v.Local.fIssue,v.Local.sRM,v.Local.sSchedule,v.Local.sSql)
+		f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)	
+	F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+	f.Intrinsic.Control.If(v.DataView.RawMatHd$RawMatLn!TempView.RowCount,>,0)
+		f.Intrinsic.Control.For(v.Local.iCount2,0,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--,1)
+			v.Local.iIndex.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).DataTableIndex)
+			v.Local.sJss.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).JSS!fieldval)
+			f.Intrinsic.String.Split(v.Local.sJss,"-",v.Local.sJss)
+			v.Local.sJob.Set(v.Local.sJss(0))
+			v.Local.sSuffix.Set(v.Local.sJss(1))
+			v.Local.sSeq.Set(v.Local.sJss(2))
+			v.Local.sJss.Redim(0,0)
+			f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"OPT_ISSUE_QTY",v.Local.fOptVal)
+			f.intrinsic.String.Build("Update job_operations set Flag_closed = '{0}', date_completed = '{1}' where LMO = 'M' and job = '{2}' and suffix = '{3}' and seq = '{4}'",v.Local.sFlag,v.Ambient.Date.PervasiveDate,v.Local.sJob,v.Local.sSuffix,v.Local.sSeq,v.Local.sSql)
+			f.ODBC.Connection!conx.execute(v.Local.sSql)
+			f.Intrinsic.Control.If(v.Local.bCheck,=,true)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"flag_closed",True)
+			f.Intrinsic.Control.Else
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"flag_closed",False)
+			f.Intrinsic.Control.EndIf
+			f.Global.APS.ScheduleJob(v.Local.sJob,v.Local.sSuffix,"B",v.Ambient.Date.PervasiveDate,v.Local.sSeq)
+		f.Intrinsic.Control.Next(v.Local.iCount2)
+		f.Data.DataView.Close("RawMatHd","TempView")
+	f.Intrinsic.Control.EndIf
+	gui.FMatOpt..Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.ElseIf(v.Args.column,=,"Sel_Seq")
+	'this is to handle calculations and distribution of qty's based on which sequences were enabled or disabled.
+	f.Intrinsic.Control.BlockEvents
+	f.Intrinsic.Control.If(v.Args.column,=,"Sel_Seq")
+		v.Local.sRM.Set(v.DataTable.RawMatHd$RawMatLn(v.Args.rowindex).Part!FieldVal)
+		f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.Args.rowindex,"Sel_Seq",v.DataTable.RawMatHd$RawMatLn(v.Args.rowindex).Sel_Seq!FieldValNot)
+	f.Intrinsic.Control.Else
+		v.Local.sRM.Set(v.DataTable.RawMatHd(v.Args.rowindex).Part!FieldVal)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+	
+	F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+	f.Data.DataView.SetValue("RawMatHd$RawMatLn", "TempView",-1,"ACT_ISSUE_QTY",0)
+	f.Data.DataView.Close("RawMatHd$RawMatLn","TempView")
+	
+	f.Intrinsic.Control.If(v.Args.column,=,"Sel_Seq")
+		f.intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+		F.Data.DataView.Create("RawMatHd", "TempVw",22,v.Local.sFilter,"")
+		v.Local.iIndex.Set(v.DataView.RawMatHd!TempVw(0).DataTableIndex)
+		f.Data.DataView.Close("RawMatHd","TempVw")
+		v.Local.fIssue.Set(v.DataTable.RawMatHd(v.Local.iIndex).ACT_ISSUE_QTY!FieldValFloat)
+	f.Intrinsic.Control.Else
+		v.Local.fIssue.Set(v.DataTable.RawMatHd(v.Args.rowindex).ACT_ISSUE_QTY!FieldValFloat)
+	f.Intrinsic.Control.EndIf
+	
+
+	f.Intrinsic.Control.If(v.Local.fIssue,>,0)
+
+		
+		f.Intrinsic.String.Build("Part = '{0}' and Sel_Seq = True",v.Local.sRM,v.Local.sFilter)
+		
+		F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+		f.Data.DataTable.Compute("RawMatHd$RawMatLn","Sum(DIFF_ISSUE)",v.Local.sFilter,v.Local.fDiffIssue)
+		
+		f.Intrinsic.Control.If(v.DataView.RawMatHd$RawMatLn!TempView.RowCount,>,0)
+'			f.Intrinsic.Math.Add(v.DataTable.RawMatHd(v.Args.rowindex).Issued_Qty!FieldValFloat,v.DataTable.RawMatHd(v.Args.rowindex).ACT_ISSUE_QTY!FieldValFloat,v.Local.fHold)
+'			f.Intrinsic.Math.sub(v.DataTable.RawMatHd(v.Args.rowindex).Diff_Issue!FieldValFloat,v.Local.fHold,v.Local.fHold)
+			f.intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+			F.Data.DataView.Create("RawMatHd", "TempVw",22,v.Local.sFilter,"")
+			v.Local.iIndex.Set(v.DataView.RawMatHd!TempVw(0).DataTableIndex)
+			f.Data.DataView.Close("RawMatHd","TempVw")
+			f.Intrinsic.Control.If(v.Args.column,=,"Sel_Seq")
+				f.Intrinsic.Math.div(v.DataTable.RawMatHd(v.Local.iIndex).ACT_ISSUE_QTY!FieldValFloat,v.Local.fDiffIssue,v.Local.fHold)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.Math.div(v.DataTable.RawMatHd(v.Args.rowindex).ACT_ISSUE_QTY!FieldValFloat,v.Local.fDiffIssue,v.Local.fHold)
+			f.Intrinsic.Control.EndIf
+			
+			v.Local.fOptMult.Set(v.Local.fHold)
+'			f.Intrinsic.Math.sub(1,v.Local.fHold,v.Local.fOptMult)
+			f.Intrinsic.Control.For(v.Local.iCount2,0,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--,1)
+				v.Local.iIndex.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).DataTableIndex)
+				f.Intrinsic.Math.mult(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).Diff_Issue!fieldvalFloat,v.Local.fOptMult,v.Local.fOptVal)		
+				f.intrinsic.Math.Round(v.Local.fOptVal,4,v.Local.fOptVal)
+				v.Local.sTemp.set(v.Local.fOptVal.String)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"ACT_ISSUE_QTY",v.Local.fOptVal)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"REV_ISSUE_QTY",0)
+				f.Data.DataTable.acceptChanges("RawMatHd$RawMatLn")
+				f.Intrinsic.Control.If(v.Local.iCount2,=,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--)
+					F.Data.DataView.ToDataTable("RawMatHd","TempView","TempDT")
+					f.Data.DataTable.Compute("TempDT","Sum(ACT_ISSUE_QTY)","",v.Local.fCheck)
+					f.intrinsic.Math.Round(v.Local.fCheck,4,v.Local.fCheck)
+					f.Data.DataTable.Close("TempDT")
+					f.Intrinsic.Math.Sub(v.Local.fIssue,v.Local.fCheck,v.Local.fCheck)
+					f.intrinsic.Math.Round(v.Local.fCheck,4,v.Local.fCheck)
+					f.Intrinsic.Control.If(v.Local.fCheck,>,0)
+						f.Intrinsic.Math.Add(v.DataTable.RawMatHd$RawMatLn(v.Local.iIndex).ACT_ISSUE_QTY.fieldvalfloat,v.Local.fCheck,v.Local.fOptVal)
+						f.intrinsic.Math.Round(v.Local.fOptVal,4,v.Local.fOptVal)
+						f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"ACT_ISSUE_QTY",v.Local.fOptVal)
+						f.Data.DataTable.acceptChanges("RawMatHd$RawMatLn")
+					f.Intrinsic.Control.ElseIf(v.Local.fCheck,<,0)
+						f.Intrinsic.Math.Add(v.DataTable.RawMatHd$RawMatLn(v.Local.iIndex).ACT_ISSUE_QTY.fieldvalfloat,v.Local.fCheck,v.Local.fOptVal)
+						f.intrinsic.Math.Round(v.Local.fOptVal,4,v.Local.fOptVal)
+						f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"ACT_ISSUE_QTY",v.Local.fOptVal)
+						f.Data.DataTable.acceptChanges("RawMatHd$RawMatLn")
+					f.Intrinsic.Control.EndIf
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.Next(v.Local.iCount2)
+		f.Intrinsic.Control.EndIf	
+		f.Data.DataView.Close("RawMatHd","TempView")
+		f.Intrinsic.Control.UnBlockEvents
+	f.Intrinsic.Control.ElseIf(v.Local.fIssue,<,0)
+		
+'		v.Local.fIssue.Set(v.Local.sRevIssue(0).long)
+		f.Intrinsic.Control.If(v.Args.column,=,"Sel_Seq")
+			f.intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+			F.Data.DataView.Create("RawMatHd", "TempVw",22,v.Local.sFilter,"")
+			v.Local.iIndex.Set(v.DataView.RawMatHd!TempVw(0).DataTableIndex)
+			f.Data.DataView.Close("RawMatHd","TempVw")
+			v.Local.fHold.set(v.DataTable.RawMatHd(v.Local.iIndex).Est_Req_Qty!FieldValFloat)
+		f.Intrinsic.Control.Else
+			v.Local.fHold.set(v.DataTable.RawMatHd(v.Args.rowindex).Est_Req_Qty!FieldValFloat)
+		f.Intrinsic.Control.EndIf
+
+		
+		f.Intrinsic.String.Build("Part = '{0}' and Sel_Seq = True",v.Local.sRM,v.Local.sFilter)
+		F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+		f.Intrinsic.Control.If(v.DataView.RawMatHd$RawMatLn!TempView.RowCount,>,0)
+			f.Intrinsic.Control.For(v.Local.iCount2,0,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--,1)
+				v.Local.iIndex.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).DataTableIndex)
+				f.Intrinsic.Math.div(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).Est_Req_Qty!FieldValFloat,v.Local.fHold,v.Local.fOptVal)
+				f.Intrinsic.Math.Mult(v.Local.fOptVal,v.Local.fIssue,v.Local.fOptVal)
+				f.intrinsic.Math.Round(v.Local.fOptVal,4,v.Local.fOptVal)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"REV_ISSUE_QTY",v.Local.fOptVal)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"ACT_ISSUE_QTY",0)
+				f.Intrinsic.Control.If(v.Local.iCount2,=,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--)
+					F.Data.DataView.ToDataTable("RawMatHd","TempView","TempDT")
+					f.Data.DataTable.Compute("TempDT","Sum(REV_ISSUE_QTY)","",v.Local.fCheck)
+					f.Data.DataTable.Close("TempDT")
+					f.Intrinsic.Math.Sub(v.Local.fIssue,v.Local.fCheck,v.Local.fCheck)
+					f.Intrinsic.Control.If(v.Local.fCheck,>,0)
+						f.Intrinsic.Math.Add(v.DataTable.RawMatHd$RawMatLn(v.Local.iIndex).REV_ISSUE_QTY.fieldvalfloat,v.Local.fCheck,v.Local.fOptVal)
+						f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"REV_ISSUE_QTY",v.Local.fOptVal)
+					f.Intrinsic.Control.ElseIf(v.Local.fCheck,<,0)
+						f.Intrinsic.Math.add(v.DataTable.RawMatHd$RawMatLn(v.Local.iIndex).REV_ISSUE_QTY.fieldvalfloat,v.Local.fCheck,v.Local.fOptVal)
+						f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"REV_ISSUE_QTY",v.Local.fOptVal)
+					f.Intrinsic.Control.EndIf					
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.Next(v.Local.iCount2)		
+		f.Intrinsic.Control.EndIf
+		f.Data.DataView.Close("RawMatHd","TempView")
+		f.Intrinsic.Control.UnBlockEvents
+	f.Intrinsic.Control.ElseIf(v.Local.fIssue,=,0)
+		f.Intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+		F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+		f.Intrinsic.Control.If(v.DataView.RawMatHd$RawMatLn!TempView.RowCount,>,0)
+			f.Intrinsic.Control.For(v.Local.iCount2,0,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--,1)
+				v.Local.iIndex.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).DataTableIndex)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"ACT_ISSUE_QTY",0)
+				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"REV_ISSUE_QTY",0)
+			f.Intrinsic.Control.Next(v.Local.iCount2)
+		f.Intrinsic.Control.EndIf	
+		f.Data.DataView.Close("RawMatHd","TempView")
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.UnBlockEvents
+f.Intrinsic.Control.EndIf
+gui.FMatOpt..Enabled(True)
+
+
+Program.Sub.GsGcMatOpt_RowCellClick.End
+
+Program.Sub.LoadLotBin.Start
+'lot bin selection screen when issuing material.
+f.Intrinsic.Control.If(v.DataTable.LotBinDT.Exists,=,true)
+	f.Data.DataView.Close("LotBinDT","LotBinVw")
+	f.Data.DataTable.Close("LotBinDT")
+f.Intrinsic.Control.EndIf
+F.Data.DataTable.CreateFromSQL("LotBinDT","conx",v.Args.SQL,true)
+f.Data.dataview.Create("LotBinDT","LotBinVw",22)
+gui.FLotBin.GsGCLotbin.AddGridviewFromDataview("LotBin_Grid", "LotBinDT", "LotBinVw")
+
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Sel_Bin", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Sel_Bin", "headerfontbold", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Sel_Bin", "caption", "Select Lot/Bin")
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Sel_Bin", "ReadOnly", False)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Sel_Bin", "AllowEdit", True)
+
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Part", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "part", "headerfontbold", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "part", "caption", "Raw Material")
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "part", "ReadOnly", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "part", "AllowEdit", False)
+
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Lot", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Lot", "headerfontbold", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Lot", "caption", "Lot")
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Lot", "ReadOnly", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Lot", "AllowEdit", False)
+
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Bin", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Bin", "headerfontbold", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Bin", "caption", "Bin")
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Bin", "ReadOnly", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Bin", "AllowEdit", False)
+
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Heat", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Heat", "headerfontbold", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Heat", "caption", "Heat")
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Heat", "ReadOnly", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Heat", "AllowEdit", False)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Heat", "Visible", False)
+
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Serial_Number", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Serial_Number", "headerfontbold", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Serial_Number", "caption", "Serial")
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Serial_Number", "ReadOnly", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Serial_Number", "AllowEdit", False)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Serial_Number", "Visible", False)
+
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Quantity", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Quantity", "headerfontbold", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Quantity", "caption", "Qty Available")
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Quantity", "ReadOnly", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Quantity", "AllowEdit", False)
+gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Quantity", "EditMaskType", "numeric")
+gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Quantity", "EditMask", "#########.0000")
+gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Quantity", "EditMaskAsDisplayFormat", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Quantity", "HeaderHAlignment", "Center")
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Quantity", "CellHAlignment ", "far")
+
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Issue_Qty", "headerforecolor", v.Color.PRI-GSS-00)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Issue_Qty", "headerfontbold", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Issue_Qty", "caption", "Opt Qty to Issue")
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Issue_Qty", "ReadOnly", False)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Issue_Qty", "AllowEdit", True)
+gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Issue_Qty", "EditMaskType", "numeric")
+gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Issue_Qty", "EditMask", "########0.0000")
+gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Issue_Qty", "EditMaskAsDisplayFormat", True)
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Issue_Qty", "HeaderHAlignment", "Center")
+Gui.FLotBin.GsGCLotbin.SetColumnProperty("LotBin_Grid", "Issue_Qty", "CellHAlignment ", "far")
+gui.FLotBin.txtRM.Text(v.Args.RM)
+gui.FLotBin.txtMatchqty.Text(v.Args.ISSUE)
+gui.FLotBin.GsGCLotbin.MainView("LotBin_Grid")
+gui.FLotBin..Enabled(True)
+gui.FLotBin.cmdIssueMat.Enabled(False)
+gui.FLotBin..Show
+Program.Sub.LoadLotBin.End
+
+Program.Sub.FLotBin_UnLoad.Start
+gui.FLotBin..Visible(False)
+gui.FMatOpt..Enabled(True)
+Program.Sub.FLotBin_UnLoad.End
+
+Program.Sub.cmdIssueMat_Click.Start
+v.Local.fTotalIssue.Declare(Float)
+v.Local.sTotalIssue.Declare(String)
+v.Local.fMatchIssue.Declare(Float)
+v.Local.sMatchIssue.Declare(String)
+v.Local.sSql.Declare(String)
+v.Local.sListSel.Declare(String)
+v.Local.sTemp.Declare(String)
+v.Local.bcheck.Declare(boolean)
+v.Local.bExceed.Declare(boolean)
+v.Local.sFilter.Declare(String)
+v.Local.sRM.Declare(String)
+v.Local.sPart.Declare(String)
+v.Local.sRev.Declare(String)
+v.Local.sWC.Declare(String)
+v.Local.sWG.Declare(String)
+v.Local.sJob.Declare(String)
+v.Local.sSuffix.Declare(String)
+v.Local.sSeq.Declare(String)
+v.Local.sFlag.Declare(String)
+v.Local.sJss.Declare(String)
+v.Local.iCount.Declare(Long)
+v.Local.iIndex.Declare(Long)
+v.Local.iCount2.Declare(Long)
+v.Local.fIssue.Declare(Float)
+v.Local.fIndIssue.Declare(Float)
+v.Local.fOptIssue.Declare(Float)
+v.Local.sIssue.Declare(String)
+v.Local.fHold.Declare(Float)
+v.Local.fOptMult.Declare(Float)
+v.Local.fOptVal.Declare(Float)
+v.Local.fCheck.Declare(Float)
+v.Local.iCheck.Declare(Long)
+v.Local.fDiffOpt.Declare(Float)
+v.Local.sRevIssue.Declare(String)
+v.Local.sSchedule.Declare(String)
+v.Local.sRet.Declare(String)
+v.Local.fLoop.Declare(Float)
+v.Local.fLoopCheck.Declare(Float)
+v.Local.fPartIndIssue.Declare(Float)
+v.Local.fHolding.Declare(Float)
+v.Local.fRemaining.Declare(Float)
+v.Local.fTemp.Declare(Float)
+
+
+
+gui.FLotBin..Enabled(False)
+v.Local.sMatchIssue.Set(v.Screen.FLotBin!txtMatchqty.text)
+v.Local.fMatchIssue.Set(v.Local.sMatchIssue.Float)
+v.Local.sTotalIssue.Set(v.Screen.FLotBin!txtIssueQty.text)
+v.Local.fTotalIssue.Set(v.Local.sTotalIssue.Float)
+v.Local.sRM.Set(v.Screen.FLotBin!txtRM.text)
+f.Intrinsic.Control.If(v.Local.fMatchIssue,<>,v.Local.fTotalIssue)
+	f.Intrinsic.UI.Msgbox("The quantity to issue does not match the total issue quantity.")
+	gui.FLotBin..Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Data.DataTable.AcceptChanges("LotBinDT")
+f.Data.Dataview.Create("LotBinDT","LotBinSelVw",22,"Sel_Bin = True","")
+v.Local.sIssue.Set(v.Local.fIssue.String)
+f.Intrinsic.String.Format(v.Local.sIssue,"########.0000",v.Local.sIssue)
+f.Intrinsic.String.Right(v.Local.sRM,3,v.Local.sRev)
+f.Intrinsic.String.left(v.Local.sRM,17,v.Local.sPart)
+f.Intrinsic.String.Build("Part = '{0}'",v.Local.sRM,v.Local.sFilter)
+
+F.Data.DataView.Create("RawMatHd$RawMatLn", "TempView",22,v.Local.sFilter,"")
+v.Local.iCheck.Set(v.DataTable.RawMatHd(v.global.iIndex).CLose_seq!FieldValLong)
+v.Local.iCount.Set(0)
+
+f.Intrinsic.Control.If(v.DataView.RawMatHd$RawMatLn!TempView.RowCount,>,0)
+	f.Intrinsic.Control.For(v.Local.iCount2,0,v.DataView.RawMatHd$RawMatLn!TempView.RowCount--,1)
+		v.Local.iIndex.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).DataTableIndex)
+		v.Local.fIndIssue.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).ACT_ISSUE_QTY!fieldvalFloat)
+		v.Local.sJss.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).JSS!fieldval)
+		v.Local.fPartIndIssue.Set(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).ACT_ISSUE_QTY!fieldvalFloat)
+		f.Intrinsic.String.Split(v.Local.sJss,"-",v.Local.sJss)
+		v.Local.sJob.Set(v.Local.sJss(0))
+		v.Local.sSuffix.Set(v.Local.sJss(1))
+		v.Local.sSeq.Set(v.Local.sJss(2))
+		v.Local.sJss.Redim(0,0)
+		v.Local.fLoop.Set(-1)
+		'issue qtys based on what the issue qtys from the lot bin selection(when multiple are selected and how much qty's from each lot bin is specified.)
+		f.Intrinsic.Control.doUntil(v.Local.fLoop,>=,0)
+			v.Local.fTemp.Set(v.DataView.LotBinDT!LotBinSelVw(v.Local.iCount).Issue_Qty!fieldvalFloat)
+			f.Intrinsic.Math.sub(v.Local.fTemp,v.Local.fPartIndIssue,v.Local.fLoopCheck)
+			f.Intrinsic.Math.Round(v.Local.fLoopCheck,4,v.Local.fLoopCheck)
+			f.Intrinsic.Control.if(v.Local.fLoopCheck,>=,0)
+				v.Local.sIssue.Set(v.Local.fPartIndIssue.String)
+				f.Intrinsic.math.Round(v.Local.fLoopCheck,4,v.Local.fLoopCheck)
+				f.data.DataView.SetValue("LotBinDT","LotBinSelVw",v.Local.iCount,"Issue_qty",v.Local.fLoopCheck)
+				f.Intrinsic.String.Format(v.Local.sIssue,"########.0000",v.Local.sIssue)
+				F.Data.DataTable.AddRow("450100","Part",v.Local.sPart,"Rev",v.Local.sRev,"Location","","Quantity",v.Local.sIssue,"Lot",v.DataView.LotBinDT!LotBinSelVw(v.Local.iCount).Lot!fieldval,"Bin",v.DataView.LotBinDT!LotBinSelVw(v.Local.iCount).Bin!fieldval,"Heat",v.DataView.LotBinDT!LotBinSelVw(v.Local.iCount).Heat!fieldval,"Serial",v.DataView.LotBinDT!LotBinSelVw(v.Local.iCount).Serial_number!fieldval,"WONumber",v.Local.sJob,"WOSuffix",v.Local.sSuffix,"WOSeq",v.Local.sSeq)
+				v.Local.fLoop.Set(v.Local.fLoopCheck)
+				
+			f.Intrinsic.Control.Else
+				f.Intrinsic.Math.Mult(v.Local.fLoopCheck,-1,v.Local.fLoopCheck)
+				f.Intrinsic.Math.Sub(v.Local.fPartIndIssue,v.Local.fLoopCheck,v.Local.fHolding)
+				f.Intrinsic.Math.Sub(v.Local.fPartIndIssue,v.Local.fHolding,v.Local.fPartIndIssue)
+				v.Local.sIssue.Set(v.Local.fHolding.String)
+				f.Intrinsic.String.Format(v.Local.sIssue,"########.0000",v.Local.sIssue)
+				F.Data.DataTable.AddRow("450100","Part",v.Local.sPart,"Rev",v.Local.sRev,"Location","","Quantity",v.Local.sIssue,"Lot",v.DataView.LotBinDT!LotBinSelVw(v.Local.iCount).Lot!fieldval,"Bin",v.DataView.LotBinDT!LotBinSelVw(v.Local.iCount).Bin!fieldval,"Heat",v.DataView.LotBinDT!LotBinSelVw(v.Local.iCount).Heat!fieldval,"Serial",v.DataView.LotBinDT!LotBinSelVw(v.Local.iCount).Serial_number!fieldval,"WONumber",v.Local.sJob,"WOSuffix",v.Local.sSuffix,"WOSeq",v.Local.sSeq)
+				
+				f.intrinsic.Math.Sub(v.DataView.LotBinDT!LotBinSelVw(v.Local.iCount).Issue_Qty!fieldvalFloat,v.Local.fHolding,v.Local.fRemaining)
+				
+				f.Intrinsic.math.Round(v.Local.fRemaining,4,v.Local.fRemaining)
+				
+				f.data.DataView.SetValue("LotBinDT","LotBinSelVw",v.Local.iCount,"Issue_qty",v.Local.fRemaining)
+				
+				f.Intrinsic.Control.If(v.Local.fRemaining,=,0)
+					f.Intrinsic.Math.Add(v.Local.iCount,1,v.Local.iCount)
+				f.Intrinsic.Control.EndIf
+				f.Intrinsic.Control.If(v.Local.fPartIndIssue,=,0)
+					v.Local.fLoop.Set(v.Local.fPartIndIssue)
+				f.Intrinsic.Control.EndIf			
+			f.Intrinsic.Control.EndIf	
+		f.Intrinsic.Control.Loop
+
+
+		
+			
+'		F.Data.DataTable.AddRow("450100","Part",v.Local.sPart,"Rev",v.Local.sRev,"Location","","Quantity",v.Local.sIssue,"Lot",v.Local.sRet(1),"Bin",v.Local.sRet(2),"Heat",v.Local.sRet(3),"Serial",v.Local.sRet(4),"WONumber",v.Local.sJob,"WOSuffix",v.Local.sSuffix,"WOSeq",v.Local.sSeq)
+		
+		f.Intrinsic.Math.add(v.Local.fIndIssue,v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).Issued_Qty!fieldvalFloat,v.Local.fHold)
+		
+		f.intrinsic.Math.Round(v.Local.fHold,4,v.Local.fHold)
+		f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"Issued_Qty",v.Local.fHold)
+'			f.Intrinsic.Math.Sub(v.Local.fOptIssue,v.Local.fHold,v.Local.fCheck)
+'			f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"DIFF_OPT_QTY",v.Local.fCheck)
+		f.Intrinsic.Math.Sub(v.DataView.RawMatHd$RawMatLn!TempView(v.Local.iCount2).Est_Req_Qty!fieldvalFloat,v.Local.fHold,v.Local.fCheck)
+		f.intrinsic.Math.Round(v.Local.fCheck,4,v.Local.fCheck)
+		f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"Diff_issue",v.Local.fCheck)
+		f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"ACT_ISSUE_QTY",0)
+		f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"REV_ISSUE_QTY",0)
+		f.Data.DataTable.acceptChanges("RawMatHd$RawMatLn")
+
+'				f.Intrinsic.Math.Sub(v.DataTable.RawMatHd$RawMatLn(v.local.iIndex).OPT_ISSUE_QTY!FieldValFloat,v.DataTable.RawMatHd$RawMatLn(v.local.iIndex).Issued_Qty!FieldValFloat,v.Local.fDiffOpt)
+'				f.Data.DataTable.SetValue("RawMatHd$RawMatLn",v.local.iIndex,"DIFF_OPT_QTY",v.Local.fOptVal)
+	
+	f.Intrinsic.Control.Next(v.Local.iCount2)
+	
+	f.Data.DataView.Close("RawMatHd$RawMatLn", "TempView")
+	f.Intrinsic.Math.add(v.Local.sMatchIssue,v.DataTable.RawMatHd(v.Global.iIndex).Issued_Qty!FieldValFloat,v.Local.fHold)
+	f.intrinsic.Math.Round(v.Local.fHold,4,v.Local.fHold)
+	f.Data.DataTable.SetValue("RawMatHd",v.global.iIndex,"Issued_Qty",v.Local.fHold)
+	f.Intrinsic.Math.Sub(v.DataTable.RawMatHd(v.global.iIndex).Est_Req_Qty!FieldValFloat,v.Local.fHold,v.Local.fCheck)
+	f.Data.DataTable.SetValue("RawMatHd",v.global.iIndex,"Diff_issue",v.Local.fCheck)
+	f.Intrinsic.Math.Sub(v.DataTable.RawMatHd(v.global.iIndex).OPT_ISSUE_QTY!FieldValFloat,v.Local.fHold,v.Local.fCheck)
+	f.Data.DataTable.SetValue("RawMatHd",v.global.iIndex,"DIFF_OPT_QTY",v.Local.fCheck)
+	f.Data.DataTable.SetValue("RawMatHd",v.global.iIndex,"ACT_ISSUE_QTY",0)
+	f.Data.DataTable.acceptChanges("RawMatHd")
+	
+	F.Intrinsic.Control.CallSub(450100Sync)
+	
+
+	
+f.Intrinsic.Control.EndIf
+
+gui.FLotBin..Enabled(True)
+gui.FLotBin..Visible(False)
+gui.FMatOpt..Enabled(True)
+Program.Sub.cmdIssueMat_Click.End
+
+Program.Sub.GsGCLotbin_CellValueChanged.Start
+v.Local.fTotalIssue.Declare(Float)
+v.Local.fMatchIssue.Declare(Float)
+v.Local.sMatchIssue.Declare(String)
+'calculates the total issue qty based on selection and entry.
+
+'only if the total qty matches the actual issue qty the issue material button is enabled.
+f.Intrinsic.Control.If(v.Args.column,=,"Issue_Qty")
+	
+	f.Intrinsic.Control.BlockEvents
+	f.Intrinsic.Control.if(v.DataTable.LotBinDT(v.Args.rowindex).quantity!fieldvalfloat,<,v.DataTable.LotBinDT(v.Args.rowindex).Issue_Qty!fieldvalfloat)
+		f.Data.DataTable.SetValue("LotBinDT",v.Args.rowindex,"Issue_Qty",v.DataTable.LotBinDT(v.Args.rowindex).quantity!fieldvalfloat)
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.AcceptChanges("LotBinDT")
+	f.Data.DataView.Create("LotBinDT","TempView",22,"Sel_Bin = True","")
+	f.Data.DataView.ToDataTable("LotBinDT","TempView","TempDT")
+	f.Data.DataView.Close("LotBinDT","TempView")
+	f.Data.DataTable.Compute("TempDT","Sum(ISSUE_QTY)","",v.Local.fTotalIssue)
+	f.Data.DataTable.Close("TempDT")
+	gui.FLotBin.txtIssueQty.Text(v.Local.fTotalIssue)
+	v.Local.sMatchIssue.Set(v.Screen.FLotBin!txtMatchqty.text)
+	v.Local.fMatchIssue.Set(v.Local.sMatchIssue.Float)
+	f.Intrinsic.Control.If(v.Local.fTotalIssue,<>,v.Local.fMatchIssue)
+		Gui.FLotBin.txtIssueQty.ForeColor(255)
+		gui.FLotBin.cmdIssueMat.Enabled(False)
+	f.Intrinsic.Control.Else
+		gui.FLotBin.txtIssueQty.ForeColor(65280)
+		gui.FLotBin.cmdIssueMat.Enabled(True)
+	f.Intrinsic.Control.EndIf	
+	f.Intrinsic.Control.UnBlockEvents	
+	
+f.Intrinsic.Control.ElseIf(v.Args.column,=,"Sel_Bin")
+	f.Data.DataTable.AcceptChanges("LotBinDT")
+	f.Data.DataView.Create("LotBinDT","TempView",22,"Sel_Bin = True","")
+	f.Data.DataView.ToDataTable("LotBinDT","TempView","TempDT")
+	f.Data.DataView.Close("LotBinDT","TempView")
+	f.Data.DataTable.Compute("TempDT","Sum(ISSUE_QTY)","",v.Local.fTotalIssue)
+	f.Data.DataTable.Close("TempDT")
+	gui.FLotBin.txtIssueQty.Text(v.Local.fTotalIssue)
+	v.Local.sMatchIssue.Set(v.Screen.FLotBin!txtMatchqty.text)
+	v.Local.fMatchIssue.Set(v.Local.sMatchIssue.Float)
+	f.Intrinsic.Control.If(v.Local.fTotalIssue,<>,v.Local.fMatchIssue)
+		Gui.FLotBin.txtIssueQty.ForeColor(255)
+		gui.FLotBin.cmdIssueMat.Enabled(False)
+	f.Intrinsic.Control.Else
+		gui.FLotBin.txtIssueQty.ForeColor(65280)
+		gui.FLotBin.cmdIssueMat.Enabled(True)
+	f.Intrinsic.Control.EndIf	
+	f.Intrinsic.Control.UnBlockEvents
+f.Intrinsic.Control.EndIf
+
+Program.Sub.GsGCLotbin_CellValueChanged.End
+
+Program.Sub.cmdPrintBCWO_Click.Start
+v.Local.sSql.Declare
+v.Local.sJob.Declare
+v.Local.sSuffix.Declare
+v.Local.bExists.Declare
+v.Local.sParms.Declare
+v.Local.iCount.Declare
+v.Local.sSchedule.Declare
+v.Local.sSchedule.Set(V.Screen.FMatOpt!txtFlxSchd.text)
+'prints bar code WO's for all WO's in the flex schedule.
+gui.FMatOpt.cmdPrintBCWO.Enabled(False)
+f.Intrinsic.Control.If(v.Local.sSchedule.trim,=,"")
+	gui.FMatOpt.cmdPrintBCWO.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Intrinsic.String.Build("Select distinct Job,Suffix from V_JOB_CT_FLX_SCHD where schedule = '{0}'",v.Local.sSchedule,v.Local.sSql)
+
+f.Data.DataTable.CreateFromSQL("PRDT","Conx",v.Local.sSql)
+f.Intrinsic.Control.If(v.DataTable.PRDT.RowCount,=,0)
+	f.Data.DataTable.Close("PRDT")
+	gui.FMatOpt.cmdPrintBCWO.Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Intrinsic.file.Exists(v.Global.sFileName,v.Local.bExists)
+'doing this for pin.
+v.Local.bExists.Set(False)
+'integrating a custom script of the customer
+f.Intrinsic.Control.If(v.Caller.Switches,<>,"O","AND",v.local.bExists,=,true)
+	f.Global.General.SetPassedDataElement("FileName",v.Global.sFileName)
+	f.Global.General.CallSyncGAS("\\lidnerp1\apps\Global\PLUGINS\GAB\GAS\SF_FLEX_COVER_PRINT.g2u")	
+f.Intrinsic.Control.EndIf
+
+
+f.Intrinsic.Control.For(v.Local.iCount,0,v.DataTable.PRDT.RowCount--,1)
+	v.Local.sJob.Set(v.DataTable.PRDT(v.Local.iCount).Job!fieldval)
+	v.Local.sSuffix.Set(v.DataTable.PRDT(v.Local.iCount).Suffix!fieldval)
+	f.Intrinsic.string.Build("{0}!*!{1}!*!1811",v.Local.sJob,v.Local.sSuffix,v.local.sParms)
+	f.Global.General.CallWrapperASync(900100,v.Local.sParms)
+	f.Intrinsic.UI.Sleep("3")
+	f.Intrinsic.UI.Msgbox("Print Next WO?")
+f.Intrinsic.Control.Next(v.Local.iCount)
+
+f.Data.DataTable.Close("PRDT")
+'
+gui.FMatOpt.cmdPrintBCWO.Enabled(True)
+Program.Sub.cmdPrintBCWO_Click.End
+
+Program.Sub.chhSave2JobOps_Click.Start
+f.Intrinsic.Control.If(v.Screen.FMatOpt!chhSave2JobOps.checkedAsBoolean)
+	f.Intrinsic.File.String2File(v.Global.sChkPath,"Really")
+f.Intrinsic.Control.Else
+	f.Intrinsic.Control.Try
+		f.Intrinsic.File.DeleteFile(v.global.sChkPath)
+	f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.EndTry
+f.Intrinsic.Control.EndIf
+Program.Sub.chhSave2JobOps_Click.End
+
+Program.Sub.lblFlexSchd2_DblClick.Start
+Function.Intrinsic.Debug.Stop
+
+Program.Sub.lblFlexSchd2_DblClick.End
+
+Program.Sub.FMatOpt_Drop.Start
+Program.Sub.FMatOpt_Drop.End
+
+Program.Sub.cmdSched_Click.Start
+v.Local.icount.Declare
+v.Local.iret.Declare
+gui.FMatOpt..Enabled(false)
+
+'schedules all jobs for the selected flex schedule.
+
+f.Intrinsic.Control.If(v.DataTable.RawMatHd.Exists)
+	f.Data.DataView.toDatatableDistinct("RawMatHd", "RawMatLn_view","SchedDT","JOB*!*SUFFIX")
+f.Intrinsic.Control.Else
+	gui.FMatOpt..Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.DataTable.SchedDT.RowCount,=,0)
+	gui.FMatOpt..Enabled(True)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+f.Data.DataTable.AddExpressionColumn("SchedDT","JS","String","Job + Suffix")
+f.Data.DataTable.AddColumn("SchedDT","Date_Due","Date")
+f.Data.DataTable.FillFromDictionary("SchedDT","JobHeaderDict","JS","Date_Due")
+f.Intrinsic.Control.For(v.Local.icount,0,v.DataTable.SchedDT.RowCount--,1)
+	f.Global.APS.ScheduleJob(v.DataTable.SchedDT(v.Local.icount).job!FieldVal,v.DataTable.SchedDT(v.Local.icount).suffix!FieldVal,"B",v.DataTable.SchedDT(v.Local.icount).date_due!FieldVal)
+f.Intrinsic.Control.Next(v.Local.icount)
+
+f.Data.DataTable.Close("SchedDT")
+
+gui.FMatOpt..Enabled(True)
+
+
+
+
+Program.Sub.cmdSched_Click.End
